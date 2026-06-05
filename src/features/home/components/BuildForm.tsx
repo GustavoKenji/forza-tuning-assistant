@@ -45,13 +45,13 @@ export default function BuildForm() {
       <div className="w-full max-w-md">
         <Card className="bg-slate-800 border-slate-700 text-slate-100">
           <CardHeader>
-            <CardTitle>Forza Tuning Assistant</CardTitle>
+            <CardTitle className="text-center text-2xl font-semibold">Forza Tuning Assistant</CardTitle>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Current Class */}
               <div>
-                <Label className="block text-sm font-medium mb-2">
+                <Label data-slot="current-class" className="block text-sm font-medium mb-2">
                   Current Car Class
                 </Label>
                 <Select
@@ -77,71 +77,90 @@ export default function BuildForm() {
 
               {/* Target Class */}
               <div>
-                <label htmlFor="targetClass" className="block text-sm font-medium mb-2">
+                <Label data-slot="target-class" className="block text-sm font-medium mb-2">
                   Target Car Class
-                </label>
-                <select
-                  id="targetClass"
+                </Label>
+                <Select
                   value={targetClass}
-                  onChange={(e) => setTargetClass(e.target.value)}
-                  className="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded text-slate-100 focus:outline-none focus:border-slate-500"
+                  onValueChange={setTargetClass}
                 >
-                  <option value="">Select class</option>
-                  {classes.map((cls) => (
-                    <option key={cls} value={cls}>
-                      {cls}
-                    </option>
-                  ))}
-                </select>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select class" />
+                  </SelectTrigger>
+
+                  <SelectContent position="popper" className="bg-slate-800 border-slate-700 text-slate-100">
+                    {classes.map((cls) => (
+                      <SelectItem
+                        key={cls}
+                        value={cls}
+                      >
+                        {cls}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
 
               {/* Drivetrain */}
               <div>
-                <label htmlFor="drivetrain" className="block text-sm font-medium mb-2">
+                <Label data-slot="drivetrain" className="block text-sm font-medium mb-2">
                   Drivetrain
-                </label>
-                <select
-                  id="drivetrain"
+                </Label>
+                <Select
                   value={drivetrain}
-                  onChange={(e) => setDrivetrain(e.target.value)}
-                  className="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded text-slate-100 focus:outline-none focus:border-slate-500"
+                  onValueChange={setDrivetrain}
                 >
-                  <option value="">Select drivetrain</option>
-                  {drivetrains.map((dt) => (
-                    <option key={dt} value={dt}>
-                      {dt}
-                    </option>
-                  ))}
-                </select>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select drivetrain" />
+                  </SelectTrigger>
+
+                  <SelectContent position="popper" className="bg-slate-800 border-slate-700 text-slate-100">
+                    {drivetrains.map((dt) => (
+                      <SelectItem
+                        key={dt}
+                        value={dt}
+                      >
+                        {dt}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
 
               {/* Category */}
               <div>
-                <label htmlFor="category" className="block text-sm font-medium mb-2">
+                <Label data-slot="category" className="block text-sm font-medium mb-2">
                   Race Category
-                </label>
-                <select
-                  id="category"
+                </Label>
+                <Select
                   value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                  className="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded text-slate-100 focus:outline-none focus:border-slate-500"
+                  onValueChange={setCategory}
                 >
-                  <option value="">Select category</option>
-                  {categories.map((cat) => (
-                    <option key={cat} value={cat}>
-                      {cat}
-                    </option>
-                  ))}
-                </select>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select category" />
+                  </SelectTrigger>
+
+                  <SelectContent position="popper" className="bg-slate-800 border-slate-700 text-slate-100">
+                    {categories.map((cat) => (
+                      <SelectItem
+                        key={cat}
+                        value={cat}
+                      >
+                        {cat}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
 
               {/* Submit Button */}
-              <button
+              <Button
                 type="submit"
-                className="w-full px-4 py-2 mt-8 bg-blue-600 hover:bg-blue-700 rounded font-medium transition-colors"
+                className="w-full bg-slate-950 hover:bg-slate-900"
+                size="lg"
               >
                 Get Recommendations
-              </button>
+              </Button>
             </form>
           </CardContent>
         </Card>
