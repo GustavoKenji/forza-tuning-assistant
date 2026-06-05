@@ -1,4 +1,4 @@
-# Forza Tunning Assistant
+# Forza Tuning Assistant
 
 Uma aplicação web criada para ajudar jogadores de Forza a entenderem:
 
@@ -51,4 +51,4 @@ Execute:
 
 ## Live Demo
 
-https://forza-tunning-assistant.vercel.app
+https://forza-tuning-assistant.vercel.app
