@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { classes, drivetrains, categories } from '../constants'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { 
   Select, 
@@ -46,6 +46,9 @@ export default function BuildForm() {
         <Card className="bg-slate-800 border-slate-700 text-slate-100">
           <CardHeader>
             <CardTitle className="text-center text-2xl font-semibold">Forza Tuning Assistant</CardTitle>
+            <CardDescription className="text-center text-lg font-semibold text-slate-400">
+              Learn, Understand, Improve
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
