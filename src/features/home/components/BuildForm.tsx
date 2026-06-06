@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { useRouter } from 'next/navigation'
+// import { useRouter } from 'next/navigation'
 import { classes, drivetrains, categories } from '../constants'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -13,13 +13,17 @@ import {
   SelectTrigger,
   SelectValue 
 } from '@/components/ui/select'
+import { Recommendation } from '@/types/recommendation'
+import { getRecommendation } from '../../recommendations/recommendationService'
+import { RecommendationCard } from '@/features/recommendations/recommendationCard'
 
 export default function BuildForm() {
-  const router = useRouter()
-  const [currentClass, setCurrentClass] = useState('')
-  const [targetClass, setTargetClass] = useState('')
-  const [drivetrain, setDrivetrain] = useState('')
-  const [category, setCategory] = useState('')
+  // const router = useRouter()
+  const [currentClass, setCurrentClass] = useState('');
+  const [targetClass, setTargetClass] = useState('');
+  const [drivetrain, setDrivetrain] = useState('');
+  const [category, setCategory] = useState('');
+  const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -30,14 +34,8 @@ export default function BuildForm() {
       return
     }
 
-    // Navigate to results page with query parameters
-    const params = new URLSearchParams({
-      currentClass,
-      targetClass,
-      drivetrain,
-      category,
-    })
-    router.push(`/results?${params.toString()}`)
+    const result = getRecommendation();
+    setRecommendation(result);
   }
 
   return (
@@ -167,6 +165,22 @@ export default function BuildForm() {
             </form>
           </CardContent>
         </Card>
+        {
+          recommendation && (
+            <Card className="bg-slate-800 border-slate-700 text-slate-100 mt-6">
+              <CardHeader>
+                <CardTitle>Recommended Build</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <RecommendationCard
+                  title={recommendation.title}
+                  description={recommendation.description}
+                  priorities={recommendation.priorities}
+                />
+              </CardContent>
+            </Card>
+          )
+        }
       </div>
     </div>
   )
