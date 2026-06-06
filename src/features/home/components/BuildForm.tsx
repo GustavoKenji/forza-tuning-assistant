@@ -34,8 +34,14 @@ export default function BuildForm() {
       return
     }
 
-    const result = getRecommendation();
-    setRecommendation(result);
+    const result = getRecommendation({
+      currentClass,
+      targetClass,
+      drivetrain,
+      category
+    });
+    console.log('Recommendation result:', result);
+    setRecommendation(result ?? null);
   }
 
   return (
@@ -169,7 +175,10 @@ export default function BuildForm() {
           recommendation && (
             <Card className="bg-slate-800 border-slate-700 text-slate-100 mt-6">
               <CardHeader>
-                <CardTitle>Recommended Build</CardTitle>
+                <CardTitle className="text-xl font-semibold">Recommended Build</CardTitle>
+                <CardDescription className="text-lg font-semibold text-slate-400">
+                  {recommendation.classUpgrade}
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <RecommendationCard
