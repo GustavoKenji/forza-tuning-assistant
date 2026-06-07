@@ -185,6 +185,7 @@ export default function BuildForm() {
                   title={recommendation.title}
                   description={recommendation.description}
                   priorities={recommendation.priorities}
+                  tuningTips={recommendation.tuningTips}
                 />
               </CardContent>
             </Card>

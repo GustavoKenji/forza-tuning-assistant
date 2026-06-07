@@ -1,4 +1,4 @@
-import { roadRecommendations, driftRecommendations } from "@/data/recommendations";
+import { recommendations } from "@/data/recommendations";
 import { Recommendation } from "@/types/recommendation";
 
 interface RecommendationParams {
@@ -14,23 +14,10 @@ export function getRecommendation({
   drivetrain,
   category,
 }: RecommendationParams): Recommendation | undefined {
-  if (category === "Road") {
-    return roadRecommendations.find(
-      rec =>
-        rec.drivetrain === drivetrain &&
-        rec.category === category &&
-        rec.classUpgrade === `${currentClass} -> ${targetClass}`
-    );
-  }
-
-  if (category === "Drift") {
-    return driftRecommendations.find(
-      rec =>
-        rec.drivetrain === drivetrain &&
-        rec.category === category &&
-        rec.classUpgrade === `${currentClass} -> ${targetClass}`
-    );
-  }
-
-  return undefined;
+  return recommendations.find(
+    rec =>
+      rec.drivetrain === drivetrain &&
+      rec.category === category &&
+      rec.classUpgrade === `${currentClass} -> ${targetClass}`
+  );
 }

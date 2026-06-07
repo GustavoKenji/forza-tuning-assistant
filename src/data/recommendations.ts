@@ -1,6 +1,6 @@
 import { Recommendation } from "@/types/recommendation";
 
-export const roadRecommendations: Recommendation[] = [
+export const recommendations: Recommendation[] = [
   {
     title: "Road AWD Build",
     drivetrain: "AWD",
@@ -14,6 +14,11 @@ export const roadRecommendations: Recommendation[] = [
       "Anti-Roll Bars",
       "Weight Reduction",
       "Power"
+    ],
+    tuningTips: [
+      "Lower front tire pressure for more grip",
+      "Increase rear ARB to reduce understeer",
+      "Avoid excessive aero in A-Class"
     ]
   },
   {
@@ -29,6 +34,11 @@ export const roadRecommendations: Recommendation[] = [
       "Anti-Roll Bars",
       "Weight Reduction",
       "Power"
+    ],
+    tuningTips: [
+      "Lower front tire pressure for more grip",
+      "Increase rear ARB to reduce understeer",
+      "Avoid excessive aero in A-Class"
     ]
   },
   {
@@ -44,11 +54,13 @@ export const roadRecommendations: Recommendation[] = [
       "Anti-Roll Bars",
       "Weight Reduction",
       "Power"
+    ],
+    tuningTips: [
+      "Lower front tire pressure for more grip",
+      "Increase rear ARB to reduce understeer",
+      "Avoid excessive aero in A-Class"
     ]
-  }
-];
-
-export const driftRecommendations: Recommendation[] = [
+  },
   {
     title: "Drift RWD Build",
     drivetrain: "RWD",
@@ -61,6 +73,11 @@ export const driftRecommendations: Recommendation[] = [
       "Anti-Roll Bars",
       "Weight Reduction",
       "Power"
+    ],
+    tuningTips: [
+      "Lower front tire pressure for more grip",
+      "Increase rear ARB to reduce understeer",
+      "Avoid excessive aero in A-Class"
     ]
   },
   {
@@ -75,6 +92,11 @@ export const driftRecommendations: Recommendation[] = [
       "Anti-Roll Bars",
       "Weight Reduction",
       "Power"
+    ],
+    tuningTips: [
+      "Lower front tire pressure for more grip",
+      "Increase rear ARB to reduce understeer",
+      "Avoid excessive aero in A-Class"
     ]
   }
 ];
