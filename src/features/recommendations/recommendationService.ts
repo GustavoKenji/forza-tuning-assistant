@@ -1,4 +1,4 @@
-import { recommendations } from "@/data/recommendations";
+import { recommendations } from "@/features/home/data/recommendations";
 import { Recommendation } from "@/types/recommendation";
 
 interface RecommendationParams {
