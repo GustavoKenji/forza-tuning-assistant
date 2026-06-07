@@ -21,9 +21,9 @@ export function GuideCard({ guide }: Props) {
       </CardHeader>
       <CardContent>
         <ul className="space-y-2">
-          {guide.effects.map((effect) => (
-            <li key={effect}>
-              ✓ {effect}
+          {guide.tips?.map((tip, id) => (
+            <li key={id}>
+              ✓ {tip}
             </li>
           ))}
         </ul>

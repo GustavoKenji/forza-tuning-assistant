@@ -4,11 +4,20 @@ export const tuningGuides: TuningGuide[] = [
   {
     id: "tire-pressure",
     title: "Tire Pressure",
-    description:
-      "Controls grip and steering response.",
+    description: "Controls grip and steering response.",
+    overview:
+      "Tire pressure affects how much of the tire is in contact with the road. It directly influences grip, responsiveness and temperature.",
     effects: [
       "More grip with lower pressure",
       "More response with higher pressure"
+    ],
+    tips: [
+      "Lower pressure for technical tracks",
+      "Increase pressure if steering feels sluggish"
+    ],
+    mistakes: [
+      "Using extremely low pressure",
+      "Changing both front and rear equally without testing"
     ]
   },
   {
