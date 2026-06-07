@@ -45,11 +45,11 @@ Execute:
 ## Roadmap
 
 # ~~Sprint 1~~
-~~Home
-- Formulário
-- Service
-- RecommendationCard
-- Lógica básica~~
+~~Home~~
+- ~~Formulário~~
+- ~~Service~~
+- ~~RecommendationCard~~
+- ~~Lógica básica~~
 
 # Sprint 2
 Educational Layer
