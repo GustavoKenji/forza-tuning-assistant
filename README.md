@@ -44,26 +44,26 @@ Execute:
 
 ## Roadmap
 
-# ~~Sprint 1~~
+# ~~Sprint 1~~ 04/06/2026✅
 ~~Home~~
 - ~~Formulário~~
 - ~~Service~~
 - ~~RecommendationCard~~
 - ~~Lógica básica~~
 
-# ~~Sprint 2~~
+# ~~Sprint 2~~ 05/06/2026✅
 ~~Educational Layer~~
 - ~~Add tuningTips on interface~~
 - ~~Add tuningTips content as Data~~
 - ~~Add tips section on RecommendationCard~~
 
-# Sprint 3
-Tuning Guide Page
+# ~~Sprint 3~~ 06/06/2026✅
+~~Tuning Guide Page~~
 - ~~Create page /tuning-guide~~
 - ~~Create cards for the guides~~
 - ~~Add navigation~~
-- Add button "View More"
-- Create first detailed page (tire-pressure)
+- ~~Add button "View More"~~
+- ~~Create first detailed page (tire-pressure)~~
 
 # Sprint 4
 - Create detailed pages for:

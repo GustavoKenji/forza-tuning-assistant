@@ -3,4 +3,7 @@ export interface TuningGuide {
   title: string;
   description: string;
   effects: string[];
+  overview?: string;
+  tips?: string[];
+  mistakes?: string[];
 }
