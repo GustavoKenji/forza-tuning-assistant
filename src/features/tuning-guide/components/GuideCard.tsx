@@ -1,3 +1,4 @@
+import { TuningGuide } from "@/types/tuningGuide";
 import {
   Card,
   CardContent,
@@ -5,7 +6,7 @@ import {
   CardHeader,
   CardTitle
 } from "@/components/ui/card";
-import { TuningGuide } from "@/types/tuningGuide";
+import Link from "next/link";
 
 interface Props {
   guide: TuningGuide;
@@ -26,6 +27,9 @@ export function GuideCard({ guide }: Props) {
             </li>
           ))}
         </ul>
+        <Link href={`/tuning-guide/${guide.id}`} className="text-blue-400 hover:text-blue-500 mt-4 inline-block">
+          Learn More
+        </Link>
       </CardContent>
     </Card>
   )

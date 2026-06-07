@@ -59,11 +59,21 @@ Execute:
 
 # Sprint 3
 Tuning Guide Page
-- ~~Criar página /tuning-guide~~
-- ~~Criar cards dos guias~~
-- ~~Adicionar navegação~~
-- Adicionar botão "View More"
-- Criar primeira página detalhada (tire-pressure)
+- ~~Create page /tuning-guide~~
+- ~~Create cards for the guides~~
+- ~~Add navigation~~
+- Add button "View More"
+- Create first detailed page (tire-pressure)
+
+# Sprint 4
+- Create detailed pages for:
+  - Tire Pressure
+  - Anti-Roll Bars
+  - Differential
+- Add simple ilustrations (SVGs or maybe diagrams)
+
+# Sprint 5
+Connect guides on recommendations
 
 ---
 
