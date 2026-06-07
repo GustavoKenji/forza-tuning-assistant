@@ -2,7 +2,7 @@ import { TuningGuide } from "@/types/tuningGuide";
 
 export const tuningGuides: TuningGuide[] = [
   {
-    id: "tire-pres",
+    id: "tire-pressure",
     title: "Tire Pressure",
     description:
       "Controls grip and steering response.",
@@ -12,7 +12,7 @@ export const tuningGuides: TuningGuide[] = [
     ]
   },
   {
-    id: "arbs",
+    id: "anti-roll-bas",
     title: "Anti-Roll Bars",
     description:
       "Controls weight transfer between wheels.",
@@ -22,7 +22,7 @@ export const tuningGuides: TuningGuide[] = [
     ]
   },
   {
-    id: "diff",
+    id: "differential",
     title: "Differential",
     description:
       "Acceleration Lock of the wheels.",
