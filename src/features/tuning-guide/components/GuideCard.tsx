@@ -16,7 +16,7 @@ export function GuideCard({ guide }: Props) {
     <Card className="bg-slate-700 border-slate-700 text-slate-100 mt-6">
       <CardHeader>
         <CardTitle>{guide.title}</CardTitle>
-        <CardDescription>{guide.description}</CardDescription>
+        <CardDescription className="text-slate-400">{guide.description}</CardDescription>
       </CardHeader>
       <CardContent>
         <ul className="space-y-2">

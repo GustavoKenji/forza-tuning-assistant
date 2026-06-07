@@ -5,6 +5,7 @@ import {
   CardTitle,
   CardDescription
 } from "@/components/ui/card";
+import Link from "next/link";
 
 import { GuideSection } from "./components/GuideSection";
 
@@ -12,7 +13,10 @@ export default function TuningGuidePage() {
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        <Card className="bg-slate-800 border-slate-700">
+        <Link href="/">
+          Build Assistant
+        </Link>
+        <Card className="bg-slate-800 border-slate-700 text-slate-100">
           <CardHeader>
             <CardTitle className="text-center text-2xl font-semibold">
               Tuning Guide

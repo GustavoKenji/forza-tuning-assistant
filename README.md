@@ -59,12 +59,11 @@ Execute:
 
 # Sprint 3
 Tuning Guide Page
-- Tire Pressure
-- Alignment
-- ARB
-- Springs
-- Differential
-Com explicações visuais.
+- ~~Criar página /tuning-guide~~
+- ~~Criar cards dos guias~~
+- ~~Adicionar navegação~~
+- Adicionar botão "View More"
+- Criar primeira página detalhada (tire-pressure)
 
 ---
 

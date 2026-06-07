@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-// import { useRouter } from 'next/navigation'
+import Link from "next/link";
 import { classes, drivetrains, categories } from '../constants'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -47,6 +47,9 @@ export default function BuildForm() {
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
+        <Link href="/tuning-guide">
+          Tuning Guide
+        </Link>
         <Card className="bg-slate-800 border-slate-700 text-slate-100">
           <CardHeader>
             <CardTitle className="text-center text-2xl font-semibold">Forza Tuning Assistant</CardTitle>
