@@ -8,4 +8,5 @@ export interface Recommendation {
   category?: string;
   currentClass?: string;
   targetClass?: string;
+  // upgradeNotes?: string[];
 }

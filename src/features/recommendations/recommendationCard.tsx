@@ -39,7 +39,7 @@ export function RecommendationCard({
           </ul>
         </CardContent>
       </Card>
-      <Card className="bg-slate-700 border-slate-700 text-slate-100 mt-6">
+      <Card className="bg-slate-700 border-slate-700 text-slate-100 mt-3">
         <CardHeader>
           <CardTitle>Tuning Tips</CardTitle>
         </CardHeader>
@@ -47,7 +47,7 @@ export function RecommendationCard({
           <ul className="space-y-2">
             {tuningTips.map((tip) => (
               <li key={tip}>
-                - {tip}
+                ✓ {tip}
               </li>
             ))}
           </ul>

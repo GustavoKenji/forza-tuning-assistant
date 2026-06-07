@@ -56,10 +56,9 @@ Educational Layer
 - Add tuningTips on interface
 - Add tuningTips content as Data
 - Add tips section on RecommendationCard
-- Create tuning guid dedicated page
 
 # Sprint 3
-Tuning Guide
+Tuning Guide Page
 - Tire Pressure
 - Alignment
 - ARB
