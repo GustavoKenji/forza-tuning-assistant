@@ -51,11 +51,11 @@ Execute:
 - ~~RecommendationCard~~
 - ~~Lógica básica~~
 
-# Sprint 2
-Educational Layer
-- Add tuningTips on interface
-- Add tuningTips content as Data
-- Add tips section on RecommendationCard
+# ~~Sprint 2~~
+~~Educational Layer~~
+- ~~Add tuningTips on interface~~
+- ~~Add tuningTips content as Data~~
+- ~~Add tips section on RecommendationCard~~
 
 # Sprint 3
 Tuning Guide Page
