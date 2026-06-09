@@ -1,22 +1,21 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import Link from "next/link";
-import { classes, drivetrains, categories } from '../types/constants'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Label } from '@/components/ui/label'
+import { classes, drivetrains, categories } from '../types/constants';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
 import { 
   Select, 
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue 
-} from '@/components/ui/select'
-import { Recommendation } from '@/types/recommendation'
-import { getRecommendation } from '../services/recommendationService'
-import { RecommendationCard } from '@/features/home/components/recommendationCard'
-import { getUpgradeSuggestions } from '../services/upgradeSugestionsService';
+} from '@/components/ui/select';
+import { Recommendation } from '@/types/recommendation';
+import { getRecommendation } from '../services/recommendationService';
+import { RecommendationCard } from '@/features/home/components/recommendationCard';
 
 export default function BuildForm() {
   // const router = useRouter()
@@ -36,12 +35,13 @@ export default function BuildForm() {
     }
 
     const recommendation = getRecommendation({
+      currentClass,
+      targetClass,
       drivetrain,
       category
     });
-    const upgradeNotes = getUpgradeSuggestions(currentClass, targetClass);
-    const result = recommendation ? { ...recommendation, classUpgrade: `${currentClass} -> ${targetClass}`, upgradeNotes: upgradeNotes } : null;
-    setRecommendation(result ?? null);
+
+    setRecommendation(recommendation || null);
   }
 
   return (

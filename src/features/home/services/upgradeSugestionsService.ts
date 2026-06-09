@@ -1,5 +1,6 @@
 import { classes } from "../types/constants";
 
+// Service to adjust upgrade priorities based on target class, using predefined priority orders for each class
 const SMALL_JUMP = [
   "Focus on handling upgrades first",
   "Upgrade tires before adding power",

@@ -3,10 +3,10 @@ export interface Recommendation {
   description: string;
   priorities: string[];
   tuningTips: string[];
-  classUpgrade?: string;
-  drivetrain?: string;
-  category?: string;
+  drivetrain: string;
+  category: string;
   currentClass?: string;
   targetClass?: string;
+  classUpgrade?: string;
   upgradeNotes?: string[];
 }
