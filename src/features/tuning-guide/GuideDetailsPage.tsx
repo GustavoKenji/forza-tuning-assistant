@@ -27,7 +27,7 @@ export default function GuideDetailPage({ slug }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-slate-900 text-slate-100 flex items-center justify-center p-6 pb-10">
       <div className="w-full max-w-4xl">
         <Link href={`/tuning-guide`}>
           Go Back ⬅️
@@ -52,6 +52,50 @@ export default function GuideDetailPage({ slug }: Props) {
                 ))}
               </ul>
             </div>
+            {guide.adjustments && (
+              <div>
+                <h4 className="text-lg font-semibold mb-4">Adjustments</h4>
+
+                <div className="grid grid-cols-2 gap-4">
+                  {guide.adjustments.map((adjustment) => (
+                    <div
+                      key={adjustment.setting}
+                      className="rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+                    >
+                      <h5 className="font-semibold text-lg mb-3">
+                        {adjustment.setting}
+                      </h5>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <p className="font-medium text-cyan-400 mb-2">
+                            Increase ↑
+                          </p>
+
+                          <ul className="list-disc list-inside text-sm space-y-1">
+                            {adjustment.increase.map((effect) => (
+                              <li key={effect}>{effect}</li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div>
+                          <p className="font-medium text-indigo-400 mb-2">
+                            Decrease ↓
+                          </p>
+
+                          <ul className="list-disc list-inside text-sm space-y-1">
+                            {adjustment.decrease.map((effect) => (
+                              <li key={effect}>{effect}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
             <div>
               <h4 className="text-lg font-semibold mb-2">Tips</h4>
               <ul className="space-y-2">

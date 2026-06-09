@@ -27,7 +27,7 @@ export function GuideCard({ guide }: Props) {
             </li>
           ))}
         </ul>
-        <Link href={`/tuning-guide/${guide.id}`} className="text-blue-400 hover:text-blue-500 mt-4 inline-block">
+        <Link href={`/tuning-guide/${guide.id}`} className="text-indigo-400 hover:text-indigo-500 mt-4 inline-block">
           Learn More
         </Link>
       </CardContent>
