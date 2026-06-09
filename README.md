@@ -38,26 +38,26 @@ Execute:
 
 ```npm run dev```
 
-# Projeto desenvolvido rodando node 22.11.0
+# Project running on node 22.11.0
 
 ---
 
 ## Roadmap
 
-# ~~Sprint 1~~ 04/06/2026✅
+# ~~Sprint 1~~ 06/2026✅
 ~~Home~~
-- ~~Formulário~~
+- ~~Forms~~
 - ~~Service~~
 - ~~RecommendationCard~~
-- ~~Lógica básica~~
+- ~~Basic Logic~~
 
-# ~~Sprint 2~~ 05/06/2026✅
+# ~~Sprint 2~~ 06/2026✅
 ~~Educational Layer~~
 - ~~Add tuningTips on interface~~
 - ~~Add tuningTips content as Data~~
 - ~~Add tips section on RecommendationCard~~
 
-# ~~Sprint 3~~ 06/06/2026✅
+# ~~Sprint 3~~ 06/2026✅
 ~~Tuning Guide Page~~
 - ~~Create page /tuning-guide~~
 - ~~Create cards for the guides~~
@@ -65,15 +65,45 @@ Execute:
 - ~~Add button "View More"~~
 - ~~Create first detailed page (tire-pressure)~~
 
-# Sprint 4
-- Create detailed pages for:
-  - Tire Pressure
-  - Anti-Roll Bars
-  - Differential
-- Add simple ilustrations (SVGs or maybe diagrams)
+# ~~Sprint 4~~ 06/2026✅
+- ~~Create detailed pages for:~~
+  - ~~Tire Pressure~~
+  - ~~Anti-Roll Bars~~
+  - ~~Differential~~
+  - ~~Alignment~~
+  - ~~Springs~~
+  - ~~Damping~~
+  - ~~Aero~~
+  - ~~Gearing~~
+  - ~~Breaks~~
+- ~~Add simple ilustrations (SVGs or maybe diagrams)~~
 
-# Sprint 5
-Connect guides on recommendations
+# Sprint 5 — Better recommendations
+Add more builds for recommendations data file or create new logic to generate builds
+Considering:
+- Current Class
+- Target Class
+- Drive Train
+- Category
+
+Example:
+- Road + AWD + B class → A class
+  ├─ should generate a diferent recommendation than:
+- Road + AWD + A class → S1 class
+
+# Sprint 6 — Upgrades Guides
+Create new guide page for upgrades:
+- Bodykits and Convertions
+- Aerodinamics and Apearance
+- Tires and Rims
+- Transmission
+- Platform and Driveability
+- Engine
+
+Explaning:
+- PI Usage
+- Pros and Cons
+- What should be the priority
 
 ---
 

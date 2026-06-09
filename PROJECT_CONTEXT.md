@@ -317,7 +317,7 @@ Explicando:
 
 ---
 
-## Sprint 7 — Melhorias de UX
+<!-- ## Sprint 7 — Melhorias de UX
 
 Possíveis melhorias:
 
@@ -325,7 +325,7 @@ Possíveis melhorias:
 * Filtros
 * Breadcrumbs
 * Navegação aprimorada
-* Melhorias Mobile
+* Melhorias Mobile -->
 
 ---
 
