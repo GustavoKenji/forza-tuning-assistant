@@ -158,12 +158,12 @@ interface Recommendation {
   description: string;
   priorities: string[];
   tuningTips: string[];
-  classUpgrade?: string;
-  drivetrain?: string;
-  category?: string;
+  drivetrain: string;
+  category: string;
   currentClass?: string;
   targetClass?: string;
-  // upgradeNotes?: string[];
+  classUpgrade?: string;
+  upgradeNotes?: string[];
 }
 ```
 
@@ -297,6 +297,14 @@ deve gerar recomendações diferentes de:
 Road + AWD + A→S1
 
 Criar mais builds para alimentar a base de dados ou estruturar um processo para gerar builds a partir dos inputs do usuario
+
+O que foi feito:
+• Build recommendations by drivetrain
+• Build recommendations by category
+• Upgrade suggestions by class progression
+• Dynamic priority adjustment
+• Recommendation service refactor
+• Separation of recommendation logic into dedicated services
 
 ---
 

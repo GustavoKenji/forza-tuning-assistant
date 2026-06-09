@@ -91,6 +91,14 @@ Example:
   ├─ should generate a diferent recommendation than:
 - Road + AWD + A class → S1 class
 
+What was made:
+• ~~Build recommendations by drivetrain~~
+• ~~Build recommendations by category~~
+• ~~Upgrade suggestions by class progression~~
+• ~~Dynamic priority adjustment~~
+• ~~Recommendation service refactor~~
+• ~~Separation of recommendation logic into dedicated services~~
+
 # Sprint 6 — Upgrades Guides
 Create new guide page for upgrades:
 - Bodykits and Convertions
