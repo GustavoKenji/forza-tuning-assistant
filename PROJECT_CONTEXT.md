@@ -257,6 +257,8 @@ Implementado:
 
 ## Sprint 4 — Expansão de Conteúdo
 
+Status: Concluída
+
 Adicionar conteúdo detalhado para:
 
 * Tire Pressure

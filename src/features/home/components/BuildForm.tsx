@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import Link from "next/link";
-import { classes, drivetrains, categories } from '../constants'
+import { classes, drivetrains, categories } from '../types/constants'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
@@ -14,8 +14,9 @@ import {
   SelectValue 
 } from '@/components/ui/select'
 import { Recommendation } from '@/types/recommendation'
-import { getRecommendation } from '../../recommendations/recommendationService'
-import { RecommendationCard } from '@/features/recommendations/recommendationCard'
+import { getRecommendation } from '../services/recommendationService'
+import { RecommendationCard } from '@/features/home/components/recommendationCard'
+import { getUpgradeSuggestions } from '../services/upgradeSugestionsService';
 
 export default function BuildForm() {
   // const router = useRouter()
@@ -34,12 +35,12 @@ export default function BuildForm() {
       return
     }
 
-    const result = getRecommendation({
-      currentClass,
-      targetClass,
+    const recommendation = getRecommendation({
       drivetrain,
       category
     });
+    const upgradeNotes = getUpgradeSuggestions(currentClass, targetClass);
+    const result = recommendation ? { ...recommendation, classUpgrade: `${currentClass} -> ${targetClass}`, upgradeNotes: upgradeNotes } : null;
     console.log('Recommendation result:', result);
     setRecommendation(result ?? null);
   }
@@ -180,7 +181,7 @@ export default function BuildForm() {
               <CardHeader>
                 <CardTitle className="text-xl font-semibold">Recommended Build</CardTitle>
                 <CardDescription className="text-lg font-semibold text-slate-400">
-                  {recommendation.classUpgrade}
+                  Class Upgrade: {recommendation.classUpgrade}
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -189,6 +190,7 @@ export default function BuildForm() {
                   description={recommendation.description}
                   priorities={recommendation.priorities}
                   tuningTips={recommendation.tuningTips}
+                  upgradeNotes={recommendation.upgradeNotes}
                 />
               </CardContent>
             </Card>

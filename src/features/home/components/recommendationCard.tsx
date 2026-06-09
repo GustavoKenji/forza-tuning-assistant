@@ -10,17 +10,19 @@ interface Props {
   description: string;
   priorities: string[];
   tuningTips: string[];
+  upgradeNotes?: string[];
 }
 
 export function RecommendationCard({
   title,
   description,
   priorities,
-  tuningTips
+  tuningTips,
+  upgradeNotes
 }: Props) {
   return (
     <>
-      <Card className="bg-slate-700 border-slate-700 text-slate-100 mt-6">
+      <Card className="bg-slate-700 border-slate-700 text-slate-100 mt-1">
         <CardHeader>
           <CardTitle>{title}</CardTitle>
         </CardHeader>
@@ -39,6 +41,22 @@ export function RecommendationCard({
           </ul>
         </CardContent>
       </Card>
+      {upgradeNotes && (
+        <Card className="bg-slate-700 border-slate-700 text-slate-100 mt-3">
+          <CardHeader>
+            <CardTitle>Upgrade Notes</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-2">
+              {upgradeNotes.map((note) => (
+                <li key={note}>
+                  ✓ {note}
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      )}
       <Card className="bg-slate-700 border-slate-700 text-slate-100 mt-3">
         <CardHeader>
           <CardTitle>Tuning Tips</CardTitle>
