@@ -41,7 +41,6 @@ export default function BuildForm() {
     });
     const upgradeNotes = getUpgradeSuggestions(currentClass, targetClass);
     const result = recommendation ? { ...recommendation, classUpgrade: `${currentClass} -> ${targetClass}`, upgradeNotes: upgradeNotes } : null;
-    console.log('Recommendation result:', result);
     setRecommendation(result ?? null);
   }
 

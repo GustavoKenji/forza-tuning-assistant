@@ -1,88 +1,86 @@
-export function getUpgradeSuggestions(
-  currentClass: string,
-  targetClass: string
-): string[] {
-  const upgrade = `${currentClass} -> ${targetClass}`;
+import { classes } from "../types/constants";
 
-  switch (upgrade) {
-    case "D -> C":
-      return [
-        "Improve suspension for better handling",
-        "Change tires for better grip",
-        "Add lower-end engine upgrades"
-      ];
-    
-    case "D -> B":
-      return [
-        "Focus on tire upgrades, for better grip",
-        "Add moderate power increases",
-        "Improve suspension for better handling"
-      ];
+const SMALL_JUMP = [
+  "Focus on handling upgrades first",
+  "Upgrade tires before adding power",
+  "Maintain vehicle balance"
+];
 
-    case "C -> B":
-      return [
-        "Prioritize tire upgrades",
-        "Add moderate power increases",
-        "Maintain balanced handling"
-      ];
+const MEDIUM_JUMP = [
+  "Prioritize grip improvements",
+  "Add moderate power increases",
+  "Consider weight reduction"
+];
 
-    case "C -> A":
-      return [
-        "Prioritize tire upgrades",
-        "Add moderate power increases",
-        "Maintain balanced handling"
-      ];
+const LARGE_JUMP = [
+  "Maximize tire performance",
+  "Upgrade suspension components",
+  "Balance power with handling upgrades"
+];
 
-    case "B -> A":
-      return [
-        "Prioritize tire upgrades",
-        "Add moderate power increases",
-        "Maintain balanced handling"
-      ];
+const TARGET_A = [
+  "Maintain balanced handling",
+  "Avoid excessive horsepower"
+];
 
-    case "B -> S1":
-      return [
-        "Focus on grip before horsepower",
-        "Install sport suspension",
-        "Consider aero upgrades"
-      ];
+const TARGET_S1 = [
+  "Focus on grip before horsepower",
+  "Consider aero upgrades"
+];
 
-    case "A -> S1":
-      return [
-        "Focus on grip before horsepower",
-        "Install race suspension",
-        "Consider aero upgrades"
-      ];
+const TARGET_S2 = [
+  "Prioritize weight reduction",
+  "Use race-grade components"
+];
 
-    case "A -> S2":
-      return [
-        "Maximize tire performance",
-        "Prioritize weight reduction",
-        "Use advanced tuning components"
-      ];
+const TARGET_R = [
+  "Focus on maximum performance",
+  "Use top-tier upgrades available"
+];
 
-    case "S1 -> S2":
-      return [
-        "Maximize tire performance",
-        "Prioritize weight reduction",
-        "Use advanced tuning components"
-      ];
+function getJumpSuggestions(jumpSize: number): string[] {
+  switch (jumpSize) {
+    case 1:
+      return SMALL_JUMP;
 
-    case "S1 -> R":
-      return [
-        "Focus on maximum grip and power",
-        "Use top-tier tuning components",
-        "Consider advanced aero upgrades"
-      ];
+    case 2:
+      return MEDIUM_JUMP;
 
-    case "S2 -> R":
-      return [
-        "Focus on maximum grip and power",
-        "Use top-tier tuning components",
-        "Consider advanced aero upgrades"
-      ];
+    default:
+      return LARGE_JUMP;
+  }
+}
+
+function getTargetSuggestions(targetClass: string): string[] {
+  switch (targetClass) {
+    case "A":
+      return TARGET_A;
+
+    case "S1":
+      return TARGET_S1;
+
+    case "S2":
+      return TARGET_S2;
+
+    case "R":
+      return TARGET_R;
 
     default:
       return [];
   }
+}
+
+export function getUpgradeSuggestions(
+  currentClass: string,
+  targetClass: string
+): string[] {
+  const currentIndex = classes.indexOf(currentClass);
+  const targetIndex = classes.indexOf(targetClass);
+
+  const jumpSize = targetIndex - currentIndex;
+
+  return [
+    ...getJumpSuggestions(jumpSize),
+    ...getTargetSuggestions(targetClass)
+  ];
 }
