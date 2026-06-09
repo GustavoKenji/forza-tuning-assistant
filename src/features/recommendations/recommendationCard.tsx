@@ -9,32 +9,50 @@ interface Props {
   title: string;
   description: string;
   priorities: string[];
+  tuningTips: string[];
 }
 
 export function RecommendationCard({
   title,
   description,
-  priorities
+  priorities,
+  tuningTips
 }: Props) {
   return (
-    <Card className="bg-slate-700 border-slate-700 text-slate-100 mt-6">
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-      </CardHeader>
+    <>
+      <Card className="bg-slate-700 border-slate-700 text-slate-100 mt-6">
+        <CardHeader>
+          <CardTitle>{title}</CardTitle>
+        </CardHeader>
 
-      <CardContent>
-        <p className="mb-4 text-slate-300">
-          {description}
-        </p>
+        <CardContent>
+          <p className="mb-4 text-slate-300">
+            {description}
+          </p>
 
-        <ul className="space-y-2">
-          {priorities.map((item) => (
-            <li key={item}>
-              ✓ {item}
-            </li>
-          ))}
-        </ul>
-      </CardContent>
-    </Card>
+          <ul className="space-y-2">
+            {priorities.map((item) => (
+              <li key={item}>
+                ✓ {item}
+              </li>
+            ))}
+          </ul>
+        </CardContent>
+      </Card>
+      <Card className="bg-slate-700 border-slate-700 text-slate-100 mt-3">
+        <CardHeader>
+          <CardTitle>Tuning Tips</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="space-y-2">
+            {tuningTips.map((tip) => (
+              <li key={tip}>
+                ✓ {tip}
+              </li>
+            ))}
+          </ul>
+        </CardContent>
+      </Card>
+    </>
   );
 }
