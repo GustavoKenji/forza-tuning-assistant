@@ -281,6 +281,8 @@ Cada guia deve possuir:
 
 ## Sprint 5 — Recomendações Mais Inteligentes
 
+Status: Concluída
+
 Levar em consideração:
 
 * Classe Atual
@@ -306,6 +308,7 @@ O que foi feito:
 • Recommendation service refactor
 • Separation of recommendation logic into dedicated services
 • Explanitions for priority upgrades
+• Dynamic tips service
 
 ---
 
