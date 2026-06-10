@@ -3,6 +3,7 @@ import { Recommendation } from "@/types/recommendation";
 import { getUpgradeSuggestions } from '../services/upgradeSugestionsService';
 import { getPriorityAdjustments } from '../services/priorityAdjustmentsService';
 import { getPriorityMetadata } from "./priorityExplanationService";
+import { getDynamicTuningTips } from "./dynamicTuningTips";
 
 interface RecommendationParams {
   currentClass: string;
@@ -37,10 +38,21 @@ export function getRecommendation({
     ...getPriorityMetadata(priority.id)
   }));
 
+  const dynamicTips = getDynamicTuningTips(
+    drivetrain,
+    category,
+    targetClass
+  );
+
   return {
     ...recommendation,
 
     priorities: prioritiesWithInfo,
+
+    tuningTips: [
+      ...recommendation.tuningTips,
+      ...dynamicTips
+    ],
 
     classUpgrade: `${currentClass} -> ${targetClass}`,
 
