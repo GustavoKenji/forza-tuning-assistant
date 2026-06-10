@@ -18,5 +18,5 @@ export const categories = [
   'Road',
   'Rally',
   'Drift',
-  'Off-Road',
+  'Cross-Country',
 ];

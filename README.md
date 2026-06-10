@@ -78,8 +78,9 @@ Execute:
   - ~~Breaks~~
 - ~~Add simple ilustrations (SVGs or maybe diagrams)~~
 
-# Sprint 5 — Better recommendations
-Add more builds for recommendations data file or create new logic to generate builds
+# ~~Sprint 5 — Better recommendations~~ 06/2026✅
+~~Add more builds for recommendations data file or create new logic to generate builds~~
+
 Considering:
 - Current Class
 - Target Class
@@ -90,6 +91,16 @@ Example:
 - Road + AWD + B class → A class
   ├─ should generate a diferent recommendation than:
 - Road + AWD + A class → S1 class
+
+What was made:
+• ~~Build recommendations by drivetrain~~
+• ~~Build recommendations by category~~
+• ~~Upgrade suggestions by class progression~~
+• ~~Dynamic priority adjustment~~
+• ~~Recommendation service refactor~~
+• ~~Separation of recommendation logic into dedicated services~~
+• ~~Explanitions for priority upgrades~~
+• ~~Dynamic tips service~~
 
 # Sprint 6 — Upgrades Guides
 Create new guide page for upgrades:

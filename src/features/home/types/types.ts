@@ -16,4 +16,4 @@ export type Category =
   | 'Road'
   | 'Rally'
   | 'Drift'
-  | 'Off-Road';
+  | 'Cross-Country';

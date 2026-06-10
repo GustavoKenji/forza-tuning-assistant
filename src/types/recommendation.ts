@@ -1,12 +1,19 @@
+export interface Priority {
+  id: string;
+  name: string;
+  explanation?: string;
+  guideId?: string;
+}
+
 export interface Recommendation {
   title: string;
   description: string;
-  priorities: string[];
+  priorities: Priority[];
   tuningTips: string[];
-  classUpgrade?: string;
-  drivetrain?: string;
-  category?: string;
+  drivetrain: string;
+  category: string;
   currentClass?: string;
   targetClass?: string;
-  // upgradeNotes?: string[];
+  classUpgrade?: string;
+  upgradeNotes?: string[];
 }
