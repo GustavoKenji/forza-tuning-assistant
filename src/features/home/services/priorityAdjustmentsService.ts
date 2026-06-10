@@ -1,3 +1,5 @@
+import { Priority } from '@/types/recommendation';
+
 // constants defining priority order for each class, and functions to adjust priorities based on target class
 const A_CLASS_PRIORITY = [
   "Tires",
@@ -44,12 +46,12 @@ function getTargetPriorities(targetClass: string): string[] {
 }
 
 function reorderPriorities(
-  basePriorities: string[],
+  basePriorities: Priority[],
   priorityBoosts: string[]
-): string[] {
+): Priority[] {
   const boosted = basePriorities.filter(priority =>
     priorityBoosts.some(boost =>
-      priority.toLowerCase().includes(boost.toLowerCase())
+      priority.name.toLowerCase().includes(boost.toLowerCase())
     )
   );
 
@@ -62,8 +64,8 @@ function reorderPriorities(
 
 export function getPriorityAdjustments(
   targetClass: string,
-  priorities: string[]
-): string[] {
+  priorities: Priority[]
+): Priority[] {
   const priorityByClass = getTargetPriorities(targetClass);
   return reorderPriorities(priorities, priorityByClass); // return array with priorities reordered based on target class
 }

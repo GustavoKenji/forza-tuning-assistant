@@ -1,14 +1,17 @@
 import {
   Card,
   CardContent,
+  CardDescription,
   CardHeader,
   CardTitle
 } from "@/components/ui/card";
+import { Priority } from "@/types/recommendation";
+import Link from "next/link";
 
 interface Props {
   title: string;
   description: string;
-  priorities: string[];
+  priorities: Priority[];
   tuningTips: string[];
   upgradeNotes?: string[];
 }
@@ -32,13 +35,21 @@ export function RecommendationCard({
             {description}
           </p>
 
-          <ul className="space-y-2">
-            {priorities.map((item) => (
-              <li key={item}>
-                ✓ {item}
-              </li>
-            ))}
-          </ul>
+          {priorities.map(priority => (
+            <Card key={priority.id} className="mb-4 bg-slate-700 border">
+              <CardHeader>
+                <CardTitle className="text-slate-100">{priority.name}</CardTitle>
+                <CardDescription className="text-slate-400">{priority.explanation}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                {priority.guideId && (
+                  <Link className="text-indigo-400 hover:text-indigo-500" href={`/upgrade-guide/${priority.guideId}`}>
+                    Learn More
+                  </Link>
+                )}
+              </CardContent>
+            </Card>
+          ))}
         </CardContent>
       </Card>
       {upgradeNotes && (

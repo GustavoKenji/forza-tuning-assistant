@@ -2,6 +2,7 @@ import { recommendations } from "@/features/home/data/recommendations";
 import { Recommendation } from "@/types/recommendation";
 import { getUpgradeSuggestions } from '../services/upgradeSugestionsService';
 import { getPriorityAdjustments } from '../services/priorityAdjustmentsService';
+import { getPriorityMetadata } from "./priorityExplanationService";
 
 interface RecommendationParams {
   currentClass: string;
@@ -26,13 +27,20 @@ export function getRecommendation({
     return undefined;
   }
 
+  const adjustedPriorities = getPriorityAdjustments(
+    targetClass,
+    recommendation.priorities
+  );
+
+  const prioritiesWithInfo = adjustedPriorities.map(priority => ({
+    ...priority,
+    ...getPriorityMetadata(priority.id)
+  }));
+
   return {
     ...recommendation,
 
-    priorities: getPriorityAdjustments(
-      targetClass,
-      recommendation.priorities
-    ),
+    priorities: prioritiesWithInfo,
 
     classUpgrade: `${currentClass} -> ${targetClass}`,
 
