@@ -98,6 +98,7 @@ What was made:
 • ~~Dynamic priority adjustment~~
 • ~~Recommendation service refactor~~
 • ~~Separation of recommendation logic into dedicated services~~
+• ~~Explanitions for priority upgrades~~
 
 # Sprint 6 — Upgrades Guides
 Create new guide page for upgrades:

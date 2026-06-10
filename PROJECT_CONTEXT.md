@@ -305,6 +305,7 @@ O que foi feito:
 • Dynamic priority adjustment
 • Recommendation service refactor
 • Separation of recommendation logic into dedicated services
+• Explanitions for priority upgrades
 
 ---
 
