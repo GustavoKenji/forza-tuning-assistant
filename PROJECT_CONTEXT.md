@@ -127,15 +127,26 @@ app/
 features/
 ├─ home/
 | ├─ components/
+| | ├─ BuildForm.tsx
+| | └─ recommendationCard.tsx
 | ├─ data/
-| ├─ constants.ts
-| └─ types.ts
-├─ recommendations/
-| ├─ recommendationCard.tsx
-| └─ recommendationService.ts
+| | └─ recommendations.ts
+| ├─ types/
+| | ├─ constants.ts
+| | └─ types.ts
+| ├─ services/
+| | ├─ dynamicTuningTips.ts
+| | ├─ priorityAdjustmentsService.ts
+| | ├─ priorityExplanationService.ts
+| | ├─ upgradeSuggestionsService.ts
+| | └─ recommendationService.ts
+|
 ├─ tuning-guide/
 | ├─ components/
+| | ├─ GuideCard.tsx
+| | └─ GuideSection.tsx
 | ├─ data/
+| | └─ tuningGuides.ts
 | ├─ TuningGuidePage.tsx
 | └─ GuideDetailPage.tsx
 
@@ -153,10 +164,17 @@ types/
 ## Recommendation
 
 ```ts
+interface Priority {
+  id: string;
+  name: string;
+  explanation?: string;
+  guideId?: string;
+}
+
 interface Recommendation {
   title: string;
   description: string;
-  priorities: string[];
+  priorities: Priority[];
   tuningTips: string[];
   drivetrain: string;
   category: string;
@@ -170,14 +188,22 @@ interface Recommendation {
 ## TuningGuide
 
 ```ts
+interface Adjustment {
+  setting: string;
+  increase: string[];
+  decrease: string[];
+}
+
 interface TuningGuide {
   id: string;
   title: string;
   description: string;
-  overview?: string;
   effects: string[];
+  overview?: string;
   tips?: string[];
   mistakes?: string[];
+  adjustments?: Adjustment[];
+  commonSymptoms?: commonSymptoms[]; // uso futuro
 }
 ```
 
