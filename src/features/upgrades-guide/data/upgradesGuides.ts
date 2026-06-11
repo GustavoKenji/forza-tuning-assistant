@@ -1,491 +1,834 @@
-import { UpgradesGuide } from "@/types/upgradesGuide";
+import { UpgradeCategory } from "@/types/upgradesGuide";
 
-export const upgradesGuides: UpgradesGuide[] = [
+export const upgradeCategories: UpgradeCategory[] = [
   {
-    id: "tire-pressure",
-    title: "Tire Pressure",
-    description: "Controls tire grip, responsiveness and temperature.",
-    overview:
-      "Tire pressure changes the size of the tire contact patch. Lower pressures generally increase grip but reduce responsiveness, while higher pressures improve steering response at the cost of traction.",
-    effects: [
-      "Lower pressure increases mechanical grip",
-      "Higher pressure improves steering response",
-      "Lower pressure increases tire temperatures",
-      "Higher pressure reduces rolling resistance",
-      "Pressure affects braking performance and cornering balance"
-    ],
-    adjustments: [
+    id: "tires-rims",
+    title: "Tires & Rims",
+    description: "Upgrades related to grip, traction and wheel setup.",
+    guides: [
       {
-        setting: "Front Tire Pressure",
-        increase: [
-          "Sharper turn-in",
-          "Faster steering response",
-          "Reduced front tire temperatures",
-          "Less front-end grip"
+        id: "tire-compounds",
+        title: "Tire Compounds",
+        description: "The tire compound determines how much grip your car generates on different surfaces and is one of the most influential upgrades in the game.",
+        piCost: "Very High",
+        benefits: [
+          "Massively improves cornering grip",
+          "Improves braking performance",
+          "Improves acceleration traction",
+          "Increases overall vehicle consistency"
         ],
-        decrease: [
-          "More front grip",
-          "Better braking grip",
-          "Higher tire temperatures",
-          "Slower steering response"
+        drawbacks: [
+          "Consumes a large amount of PI",
+          "May leave less PI available for power upgrades"
+        ],
+        whenToUse: [
+          "Road racing builds",
+          "Grip-focused setups",
+          "Technical circuits"
+        ],
+        avoidWhen: [
+          "Low-class power builds",
+          "Drag-focused cars"
+        ],
+        tips: [
+          "Often the strongest PI investment for road racing."
+        ],
+        tags: ["grip", "handling"]
+      },
+      {
+        id: "tire-width",
+        title: "Tire Width",
+        description: "Wider tires increase the contact patch between the tire and the road, improving grip and stability.",
+        piCost: "Medium",
+        benefits: [
+          "Improves cornering grip",
+          "Improves launch traction",
+          "Reduces wheelspin"
+        ],
+        drawbacks: [
+          "Adds PI quickly",
+          "Can limit power upgrades"
+        ],
+        whenToUse: [
+          "High-power builds",
+          "AWD conversions",
+          "Road racing"
+        ],
+        avoidWhen: [
+          "Extremely PI-limited classes"
+        ],
+        tips: [
+          "Rear tire width usually provides the biggest benefit."
         ]
       },
       {
-        setting: "Rear Tire Pressure",
-        increase: [
-          "More rear rotation",
-          "Less rear grip",
-          "Reduced tire temperatures",
-          "Better top-speed efficiency"
+        id: "rim-size",
+        title: "Rim Size",
+        description: "Rim size changes the balance between tire sidewall flexibility and steering responsiveness.",
+        piCost: "Low",
+        benefits: [
+          "Can improve steering response",
+          "Allows fine-tuning vehicle feel"
         ],
-        decrease: [
-          "More rear traction",
-          "Improved launch performance",
-          "Greater stability",
-          "Higher tire temperatures"
+        drawbacks: [
+          "Usually provides small performance gains",
+          "Can reduce ride compliance"
+        ],
+        whenToUse: [
+          "Fine-tuning a build",
+          "Competitive setups"
+        ],
+        avoidWhen: [
+          "Early-stage builds"
+        ],
+        tips: [
+          "Smaller rims generally favor grip while larger rims favor responsiveness."
         ]
       }
-    ],
-    tips: [
-      "Lower pressures help on technical circuits",
-      "Raise pressure if the car feels lazy to respond",
-      "Adjust front and rear independently"
-    ],
-    mistakes: [
-      "Using minimum pressure on every build",
-      "Making large pressure changes at once",
-      "Ignoring temperature balance"
     ]
   },
   {
-    id: "anti-roll-bars",
-    title: "Anti-Roll Bars",
-    description: "Controls body roll and cornering balance.",
-    overview:
-      "Anti-roll bars connect the left and right suspension. They control how weight transfers across the car during cornering and are one of the fastest ways to adjust understeer and oversteer.",
-    effects: [
-      "Stiffer bars reduce body roll",
-      "Softer bars increase mechanical grip",
-      "Front bar changes affect front grip balance",
-      "Rear bar changes affect rotation and stability"
-    ],
-    adjustments: [
+    id: "platform-handling",
+    title: "Platform & Handling",
+    description: "Upgrades related to suspension, weight and chassis.",
+    guides: [
       {
-        setting: "Front Anti-Roll Bar",
-        increase: [
-          "Sharper response",
-          "Reduced body roll",
-          "More understeer",
-          "Less front grip in corners"
+        id: "weight-reduction",
+        title: "Weight Reduction",
+        description: "Weight Reduction shaves the biggest chunks of weight per PI.",
+        piCost: "High",
+        benefits: [
+          "Improves acceleration",
+          "Improves braking",
+          "Improves cornering",
         ],
-        decrease: [
-          "More front grip",
-          "Reduced understeer",
-          "Better corner entry",
-          "More body roll"
+        drawbacks: [
+          "Consumes a large amount of PI",
+        ],
+        whenToUse: [
+          "Road builds",
+          "Technical circuits",
+          "Cars with excessive weight",
+        ],
+        avoidWhen: [
+          "Power-limited classes",
+          "Drag-focused builds",
+        ],
+        tips: [
+          "Usually one of the most efficient upgrades in A and S1 class",
+        ],
+      },
+      {
+        id: "anti-roll-bars",
+        title: "Anti-Roll Bars",
+        description: "Unlocks anti-roll bar tuning and improves control of body roll during cornering.",
+        piCost: "Low",
+        benefits: [
+          "Unlocks tuning options",
+          "Improves handling balance",
+          "Reduces body roll"
+        ],
+        drawbacks: [
+          "Requires tuning knowledge to maximize benefits"
+        ],
+        whenToUse: [
+          "Road racing",
+          "Circuit builds"
+        ],
+        avoidWhen: [
+          "Drag racing"
+        ],
+        tips: [
+          "A cheap upgrade that provides valuable tuning flexibility."
+        ],
+        unlocksTuning: true
+      },
+      {
+        id: "springs-dampers",
+        title: "Springs & Dampers",
+        description: "Unlocks suspension tuning and allows precise control over weight transfer and chassis movement.",
+        piCost: "Medium",
+        benefits: [
+          "Unlocks ride height tuning",
+          "Unlocks spring tuning",
+          "Improves setup flexibility"
+        ],
+        drawbacks: [
+          "Requires tuning to fully benefit"
+        ],
+        whenToUse: [
+          "Road racing",
+          "Drift builds",
+          "Rally builds"
+        ],
+        avoidWhen: [
+          "Very low PI builds"
+        ],
+        tips: [
+          "One of the most important upgrades for advanced tuning."
+        ],
+        unlocksTuning: true
+      },
+      {
+        id: "brakes",
+        title: "Race Brakes",
+        description: "Improves braking performance and unlocks brake balance and pressure tuning.",
+        piCost: "Medium",
+        benefits: [
+          "Shorter braking distances",
+          "Unlocks brake tuning",
+          "Improves corner entry control"
+        ],
+        drawbacks: [
+          "Can be expensive in PI"
+        ],
+        whenToUse: [
+          "Road racing",
+          "Heavy vehicles"
+        ],
+        avoidWhen: [
+          "Drag builds"
+        ],
+        tips: [
+          "More useful on heavier cars than lightweight sports cars."
+        ],
+        unlocksTuning: true
+      }
+    ],
+  },
+  {
+    id: "conversions",
+    title: "Conversions & Body Kits",
+    description: "Upgrades related to engine swap, drivetrain swap, aspiration types and body kits.",
+    guides: [
+      {
+        id: "engine-swap",
+        title: "Engine Swap",
+        description: "Replaces the original engine with a different powerplant, dramatically changing performance characteristics.",
+        piCost: "Very High",
+        benefits: [
+          "Access to more power",
+          "Different powerband",
+          "Greater upgrade potential"
+        ],
+        drawbacks: [
+          "Consumes significant PI",
+          "Can upset vehicle balance"
+        ],
+        whenToUse: [
+          "Competitive builds",
+          "Max-performance projects"
+        ],
+        avoidWhen: [
+          "Purist builds"
+        ],
+        tips: [
+          "Not every car benefits from an engine swap."
         ]
       },
       {
-        setting: "Rear Anti-Roll Bar",
-        increase: [
-          "More rotation",
-          "Improved corner exit rotation",
-          "Less rear grip",
-          "Increased oversteer tendency"
+        id: "aspiration",
+        title: "Aspiration Conversion",
+        description: "Adds or changes forced induction systems such as turbochargers and superchargers.",
+        piCost: "High",
+        benefits: [
+          "Large power gains",
+          "Greater tuning potential"
         ],
-        decrease: [
-          "More rear stability",
-          "Greater rear grip",
-          "Less oversteer",
-          "Slower rotation"
+        drawbacks: [
+          "Can increase turbo lag",
+          "Consumes significant PI"
+        ],
+        whenToUse: [
+          "Power-focused builds"
+        ],
+        avoidWhen: [
+          "Grip-limited builds"
+        ],
+        tips: [
+          "Turbo conversions usually offer the largest power ceiling."
+        ]
+      },
+      {
+        id: "drivetrains",
+        title: "Drivetrain Conversion",
+        description: "Changes the driven wheels of the vehicle, such as converting RWD to AWD.",
+        piCost: "High",
+        benefits: [
+          "Improves launch traction",
+          "Improves stability",
+          "Easier to drive"
+        ],
+        drawbacks: [
+          "Adds weight",
+          "Consumes valuable PI"
+        ],
+        whenToUse: [
+          "Road racing",
+          "High horsepower cars"
+        ],
+        avoidWhen: [
+          "Drift builds",
+          "Purist setups"
+        ],
+        tips: [
+          "AWD swaps are extremely strong but not always optimal."
+        ]
+      },
+      {
+        id: "bodykit",
+        title: "Body Kits",
+        description:"Changes vehicle appearance and can alter weight, aero and handling characteristics.",
+        piCost: "Low to Medium",
+        benefits: [
+          "Can reduce weight",
+          "May improve aerodynamics"
+        ],
+        drawbacks: [
+          "Benefits vary greatly by vehicle"
+        ],
+        whenToUse: [
+          "Competitive builds",
+          "Style-focused builds"
+        ],
+        avoidWhen: [
+          "When PI is extremely limited"
+        ],
+        tips: [
+          "Some body kits provide surprisingly strong performance gains."
         ]
       }
     ],
-    tips: [
-      "Use ARBs as your primary balance adjustment",
-      "Small changes often make a noticeable difference",
-      "Adjust one axle at a time"
-    ],
-    mistakes: [
-      "Making front and rear stiffer together",
-      "Using maximum stiffness",
-      "Trying to solve every issue with ARBs"
-    ]
   },
   {
-    id: "differential",
-    title: "Differential",
-    description: "Controls how power and braking forces are shared between driven wheels.",
-
-    overview:
-      "Differential settings determine how strongly the driven wheels are locked together during acceleration and braking. These settings have a major impact on traction, stability and cornering behavior.",
-
-    effects: [
-      "Higher acceleration lock increases traction",
-      "Higher acceleration lock can increase understeer",
-      "Higher deceleration lock improves stability",
-      "Lower deceleration lock improves rotation",
-      "AWD center balance affects front-to-rear power delivery"
-    ],
-
-    adjustments: [
+    id: "transmission-system",
+    title: "Transmission System",
+    description:"Upgrades related to transmission, clutch, driveline and differential.",
+    guides: [
       {
-        setting: "Acceleration Lock",
-        increase: [
-          "More traction on corner exit",
-          "Better launches",
-          "Improved power delivery",
-          "More understeer under throttle"
+        id: "transmission",
+        title: "Transmission",
+        description: "Transmission upgrades unlock gear ratio tuning, allowing you to adjust acceleration, top speed and power delivery.",
+        piCost: "Medium",
+        benefits: [
+          "Unlocks gear ratio tuning",
+          "Allows optimization for different tracks",
+          "Improves acceleration or top speed depending on setup",
+          "Can help keep the engine in its powerband"
         ],
-        decrease: [
-          "More corner rotation",
-          "Better turn-in",
-          "Reduced understeer",
-          "Greater chance of wheelspin"
+        drawbacks: [
+          "Requires tuning knowledge to maximize benefits",
+          "Provides limited gains with default settings"
+        ],
+        whenToUse: [
+          "Circuit racing",
+          "Competitive builds",
+          "Cars with poor stock gearing",
+          "Drag racing setups"
+        ],
+        avoidWhen: [
+          "Beginner builds where PI is extremely limited"
+        ],
+        tips: [
+          "One of the most valuable upgrades for advanced tuning.",
+          "A properly tuned transmission can feel like a power upgrade without adding horsepower."
+        ],
+        unlocksTuning: true
+      },
+      {
+        id: "clutch",
+        title: "Clutch",
+        description: "Clutch upgrades reduce gear shift times, helping the car spend less time between gears.",
+        piCost: "Low",
+        benefits: [
+          "Faster gear changes",
+          "Improves acceleration",
+          "Provides performance gains with minimal PI cost"
+        ],
+        drawbacks: [
+          "Benefits are less noticeable on casual driving",
+          "Does not increase engine power"
+        ],
+        whenToUse: [
+          "Road racing",
+          "Drag racing",
+          "High-performance builds"
+        ],
+        avoidWhen: [
+          "Very low-class builds with severe PI restrictions"
+        ],
+        tips: [
+          "Often one of the most PI-efficient upgrades in the transmission category.",
+          "The benefit becomes more noticeable as vehicle power increases."
+        ],
+        unlocksTuning: true
+      },
+      {
+        id: "driveline",
+        title: "Driveline",
+        description: "Driveline upgrades reduce drivetrain weight, improving vehicle responsiveness and acceleration.",
+        piCost: "Low",
+        benefits: [
+          "Reduces drivetrain weight",
+          "Improves acceleration",
+          "Improves vehicle responsiveness",
+          "Provides gains without altering handling balance"
+        ],
+        drawbacks: [
+          "Performance gains are relatively small",
+          "Less impactful than major grip or power upgrades"
+        ],
+        whenToUse: [
+          "Road racing",
+          "Track-focused builds",
+          "Fine-tuning a nearly completed build"
+        ],
+        avoidWhen: [
+          "Early-stage builds where larger upgrades are available"
+        ],
+        tips: [
+          "A common upgrade when trying to maximize performance near a class limit.",
+          "Works particularly well when combined with weight reduction."
         ]
       },
       {
-        setting: "Deceleration Lock",
-        increase: [
-          "More stability while braking",
-          "Safer corner entry",
-          "Less rotation",
-          "Reduced lift-off oversteer"
+        id: "differential",
+        title: "Differential",
+        description: "Differential upgrades unlock differential tuning, allowing precise control over how power is distributed to the driven wheels.",
+        piCost: "Low",
+        benefits: [
+          "Unlocks differential tuning",
+          "Improves traction management",
+          "Allows better corner entry and exit behavior",
+          "Essential for advanced tuning"
         ],
-        decrease: [
-          "Improved corner entry rotation",
-          "Better agility",
-          "More responsiveness",
-          "Less braking stability"
+        drawbacks: [
+          "Requires tuning knowledge",
+          "Default settings may not provide significant improvements"
+        ],
+        whenToUse: [
+          "Road racing",
+          "Drifting",
+          "Rally builds",
+          "Competitive setups"
+        ],
+        avoidWhen: [
+          "Simple beginner builds where tuning adjustments are not planned"
+        ],
+        tips: [
+          "One of the most important upgrades for experienced tuners.",
+          "Differential tuning can dramatically change how a car behaves under acceleration and braking.",
+          "AWD, RWD and FWD vehicles often require very different differential settings."
+        ],
+        unlocksTuning: true,
+        tags: ["tuning", "traction"]
+      }
+    ],
+  },
+  {
+    id: "aero-bodyparts",
+    title: "Aerodynamics & Body Parts",
+    description:"Upgrades related to front bumpers, rear wings, side skirts and hood, aim for more downforce or pure styles.",
+    guides: [
+      {
+        id: "front-bumpers",
+        title: "Front Bumpers & Aero",
+        description: "Front aero upgrades add adjustable front downforce, increasing front-end grip and improving turn-in response.",
+        piCost: "Medium",
+        unlocksTuning: true,
+        benefits: [
+          "Improves front-end grip",
+          "Reduces understeer",
+          "Improves turn-in response",
+          "Unlocks front downforce tuning"
+        ],
+        drawbacks: [
+          "Increases aerodynamic drag",
+          "Can reduce top speed",
+          "Consumes PI that could be used elsewhere"
+        ],
+        whenToUse: [
+          "Circuit racing",
+          "Technical tracks",
+          "Cars with excessive understeer",
+          "Grip-focused builds"
+        ],
+        avoidWhen: [
+          "Drag builds",
+          "Top-speed focused setups"
+        ],
+        tips: [
+          "Front aero is often used to improve corner entry performance.",
+          "Too much front downforce can make the rear feel unstable."
+        ]
+      },
+      {
+        id: "rear-wings",
+        title: "Rear Wings & Aero",
+        description: "Rear aero upgrades add adjustable rear downforce, improving stability and rear-end grip during cornering.",
+        piCost: "Medium",
+        unlocksTuning: true,
+        benefits: [
+          "Improves rear stability",
+          "Improves corner exit traction",
+          "Reduces oversteer",
+          "Unlocks rear downforce tuning"
+        ],
+        drawbacks: [
+          "Adds aerodynamic drag",
+          "Reduces top speed",
+          "Consumes PI"
+        ],
+        whenToUse: [
+          "Road racing",
+          "High-power RWD cars",
+          "Technical circuits",
+          "Grip-focused builds"
+        ],
+        avoidWhen: [
+          "Drag racing",
+          "Top-speed highway builds"
+        ],
+        tips: [
+          "Rear aero is one of the easiest ways to stabilize a difficult car.",
+          "Balance front and rear aero carefully to avoid handling issues."
+        ],
+        tags: ["aero", "stability"]
+      },
+      {
+        id: "side-skirts",
+        title: "Side Skirts",
+        description: "Side skirts primarily affect appearance, though some vehicles may receive minor aerodynamic benefits.",
+        piCost: "Low",
+        benefits: [
+          "Improves vehicle appearance",
+          "May provide minor aerodynamic improvements on certain cars"
+        ],
+        drawbacks: [
+          "Usually offers minimal performance gains",
+          "Benefits vary greatly between vehicles"
+        ],
+        whenToUse: [
+          "Style-focused builds",
+          "Completionist builds",
+          "When PI impact is minimal"
+        ],
+        avoidWhen: [
+          "Highly optimized competitive builds with strict PI limits"
+        ],
+        tips: [
+          "Most side skirts are chosen for aesthetics rather than performance.",
+          "Performance impact is usually small compared to aero upgrades."
+        ]
+      },
+      {
+        id: "hood",
+        title: "Hood Upgrades",
+        description: "Hood upgrades can reduce weight and improve vehicle appearance, depending on the specific vehicle.",
+        piCost: "Low",
+        benefits: [
+          "May reduce vehicle weight",
+          "Can slightly improve handling",
+          "Provides cosmetic customization"
+        ],
+        drawbacks: [
+          "Performance gains are often small",
+          "Benefits vary significantly by vehicle"
+        ],
+        whenToUse: [
+          "Fine-tuning a build",
+          "Reducing weight when close to a class limit",
+          "Visual customization"
+        ],
+        avoidWhen: [
+          "When larger performance upgrades are available"
+        ],
+        tips: [
+          "Some lightweight hood options provide surprisingly efficient PI savings.",
+          "Always compare the weight reduction against other available upgrades."
         ]
       }
     ],
-
-    tips: [
-      "Tune acceleration before deceleration",
-      "Use lower lock values on technical circuits",
-      "Increase lock if traction is a problem"
-    ],
-
-    mistakes: [
-      "Using maximum acceleration lock",
-      "Ignoring deceleration settings",
-      "Changing multiple differential values simultaneously"
-    ]
   },
   {
-    id: "alignment",
-    title: "Alignment",
-    description: "Controls tire angles and stability.",
-    overview:
-      "Alignment settings affect how the tires contact the road during cornering, acceleration and braking.",
-    effects: [
-      "More negative front camber improves front-end grip in corners",
-      "Too much negative camber reduces braking performance",
-      "More negative rear camber improves rear stability",
-      "Front toe-out improves turn-in response",
-      "Rear toe-in increases stability",
-      "Higher caster improves straight-line stability and dynamic camber"
-    ],
-    tips: [
-      "Use small camber adjustments before making large changes",
-      "Add slight front toe-out if the car feels slow to turn",
-      "Increase caster for better steering feel"
-    ],
-    mistakes: [
-      "Using excessive negative camber",
-      "Making large toe adjustments",
-      "Ignoring tire temperature distribution"
-    ]
-  },
-  {
-    id: "springs",
-    title: "Springs",
-    description: "Controls suspension stiffness and weight transfer.",
-    overview:
-      "Spring stiffness affects how quickly the car transfers weight during acceleration, braking and cornering.",
-    effects: [
-      "Softer springs increase mechanical grip",
-      "Stiffer springs improve responsiveness",
-      "Softer front springs increase front grip",
-      "Stiffer front springs increase understeer",
-      "Softer rear springs improve traction",
-      "Stiffer rear springs increase rotation"
-    ],
-    adjustments: [
+    id: "engine",
+    title: "Engine Parts",
+    description:"Upgrades related to various engine parts.",
+    guides: [
       {
-        setting: "Front Springs",
-        increase: [
-          "Sharper response",
-          "Less body movement",
-          "More understeer",
-          "Reduced front grip"
+        id: "intake",
+        title: "Intake",
+        description: "Intake upgrades improve airflow into the engine, providing a small but efficient increase in power.",
+        piCost: "Low",
+        benefits: [
+          "Improves horsepower",
+          "Usually offers good PI efficiency",
+          "Works well in most builds"
         ],
-        decrease: [
-          "More front grip",
-          "Better bump absorption",
-          "Improved compliance",
-          "Slower response"
+        drawbacks: [
+          "Power gains are relatively small"
+        ],
+        whenToUse: [
+          "Low and mid-class builds",
+          "Road racing",
+          "General performance upgrades"
+        ],
+        avoidWhen: [
+          "When larger power upgrades are available"
+        ],
+        tips: [
+          "Often one of the first engine upgrades players install."
         ]
       },
       {
-        setting: "Rear Springs",
-        increase: [
-          "More rotation",
-          "Less rear grip",
-          "Sharper handling",
-          "Greater oversteer tendency"
+        id: "intake-manifold",
+        title: "Intake Manifold & Throttle Body",
+        description: "Improves airflow distribution and engine breathing, particularly at higher RPM.",
+        piCost: "Medium",
+        benefits: [
+          "Improves high-RPM power",
+          "Supports larger engine builds",
+          "Works well with camshaft upgrades"
         ],
-        decrease: [
-          "More traction",
-          "More rear stability",
-          "Improved grip on rough surfaces",
-          "Reduced rotation"
+        drawbacks: [
+          "Less noticeable on lower-powered vehicles"
+        ],
+        whenToUse: [
+          "Naturally aspirated builds",
+          "High-revving engines",
+          "Track-focused setups"
+        ],
+        avoidWhen: [
+          "PI-limited low-class builds"
+        ],
+        tips: [
+          "Usually becomes more valuable as power levels increase."
+        ]
+      },
+      {
+        id: "fuel-system",
+        title: "Fuel System",
+        description: "Upgrades fuel delivery capacity, allowing the engine to support higher power levels.",
+        piCost: "Medium",
+        benefits: [
+          "Provides solid horsepower gains",
+          "Supports high-power builds",
+          "Works well with forced induction"
+        ],
+        drawbacks: [
+          "Can consume PI quickly"
+        ],
+        whenToUse: [
+          "Turbo builds",
+          "Supercharged builds",
+          "High horsepower projects"
+        ],
+        avoidWhen: [
+          "Low-class efficiency builds"
+        ],
+        tips: [
+          "Becomes increasingly valuable as engine output rises."
+        ]
+      },
+      {
+        id: "ignition",
+        title: "Ignition",
+        description: "Improves combustion efficiency, providing reliable horsepower gains at a reasonable PI cost.",
+        piCost: "Low",
+        benefits: [
+          "Good PI efficiency",
+          "Adds horsepower",
+          "Works well in most engine setups"
+        ],
+        drawbacks: [
+          "Provides smaller gains than major engine upgrades"
+        ],
+        whenToUse: [
+          "Any performance build",
+          "Early-stage upgrades"
+        ],
+        avoidWhen: [
+          "Rarely a bad choice"
+        ],
+        tips: [
+          "Often considered one of the most efficient engine upgrades."
+        ]
+      },
+      {
+        id: "exhaust",
+        title: "Exhaust",
+        description: "Improves exhaust flow, increasing engine efficiency and overall power output.",
+        piCost: "Low to Medium",
+        benefits: [
+          "Provides strong power gains",
+          "Usually offers excellent PI efficiency",
+          "Improves engine responsiveness"
+        ],
+        drawbacks: [
+          "Limited gains compared to major engine upgrades"
+        ],
+        whenToUse: [
+          "Almost every performance build",
+          "Road racing",
+          "Street builds"
+        ],
+        avoidWhen: [
+          "Rarely worth skipping"
+        ],
+        tips: [
+          "Often one of the best horsepower-per-PI upgrades available."
+        ]
+      },
+      {
+        id: "pistons-compression",
+        title: "Pistons & Compression",
+        description: "Increases engine compression and internal efficiency, resulting in significant power gains.",
+        piCost: "High",
+        benefits: [
+          "Large horsepower increase",
+          "Improves engine performance throughout the RPM range"
+        ],
+        drawbacks: [
+          "Consumes a significant amount of PI"
+        ],
+        whenToUse: [
+          "Competitive builds",
+          "High-performance projects"
+        ],
+        avoidWhen: [
+          "Low-class efficiency builds"
+        ],
+        tips: [
+          "One of the strongest naturally aspirated power upgrades."
+        ]
+      },
+      {
+        id: "valves-valvetrain",
+        title: "Valves & Valvetrain",
+        description: "Improves airflow control at high RPM, increasing engine performance and rev potential.",
+        piCost: "High",
+        benefits: [
+          "Strong horsepower gains",
+          "Improves high-RPM performance",
+          "Pairs well with camshaft upgrades"
+        ],
+        drawbacks: [
+          "Can be expensive in PI"
+        ],
+        whenToUse: [
+          "Track builds",
+          "High-revving engines",
+          "Competitive racing"
+        ],
+        avoidWhen: [
+          "Torque-focused low-RPM builds"
+        ],
+        tips: [
+          "Particularly effective on naturally aspirated engines."
+        ]
+      },
+      {
+        id: "displacement",
+        title: "Displacement (Engine Block)",
+        description: "Increases engine displacement, producing more torque and improving overall power output.",
+        piCost: "Very High",
+        benefits: [
+          "Large torque increase",
+          "Improves acceleration",
+          "Boosts overall engine output"
+        ],
+        drawbacks: [
+          "One of the most expensive engine upgrades in PI",
+          "May push the vehicle into a higher class quickly"
+        ],
+        whenToUse: [
+          "Power-focused builds",
+          "Heavy vehicles",
+          "Drag racing"
+        ],
+        avoidWhen: [
+          "PI-limited grip builds"
+        ],
+        tips: [
+          "Torque gains are often more noticeable than horsepower gains."
+        ],
+        tags: ["torque", "acceleration"]
+      },
+      {
+        id: "camshaft",
+        title: "Camshaft",
+        description: "Changes valve timing characteristics, increasing engine power and improving performance at higher RPM.",
+        piCost: "High",
+        benefits: [
+          "Strong horsepower gains",
+          "Improves high-RPM power",
+          "Excellent for racing builds"
+        ],
+        drawbacks: [
+          "Consumes significant PI"
+        ],
+        whenToUse: [
+          "Road racing",
+          "Circuit builds",
+          "High-performance engines"
+        ],
+        avoidWhen: [
+          "Low-class builds focused on efficiency"
+        ],
+        tips: [
+          "One of the most impactful power upgrades available."
+        ],
+        tags: ["horsepower", "high-rpm"]
+      },
+      {
+        id: "oil-cooling",
+        title: "Oil & Cooling",
+        description: "Improves engine cooling and reliability while providing modest performance gains.",
+        piCost: "Low",
+        benefits: [
+          "Small power increase",
+          "Often offers reasonable PI efficiency"
+        ],
+        drawbacks: [
+          "Provides limited gains compared to major engine upgrades"
+        ],
+        whenToUse: [
+          "Fine-tuning a build",
+          "Maximizing performance near a class limit"
+        ],
+        avoidWhen: [
+          "Early-stage builds with larger upgrade opportunities"
+        ],
+        tips: [
+          "Usually installed after higher-impact power upgrades."
+        ]
+      },
+      {
+        id: "flywheel",
+        title: "Flywheel",
+        description: "Reduces rotational mass, allowing the engine to gain and lose RPM more quickly.",
+        piCost: "Low",
+        benefits: [
+          "Improves engine responsiveness",
+          "Helps acceleration feel more immediate",
+          "Generally inexpensive in PI"
+        ],
+        drawbacks: [
+          "Does not directly increase horsepower",
+          "Performance gains can be subtle"
+        ],
+        whenToUse: [
+          "Road racing",
+          "Track-focused builds",
+          "Fine-tuning performance"
+        ],
+        avoidWhen: [
+          "When larger upgrades are still available"
+        ],
+        tips: [
+          "A small upgrade that contributes to a more responsive driving experience."
         ]
       }
     ],
-    tips: [
-      "Use softer springs on bumpy tracks",
-      "Increase stiffness gradually",
-      "Balance front and rear changes"
-    ],
-    mistakes: [
-      "Using maximum stiffness everywhere",
-      "Ignoring ride height adjustments",
-      "Making large front and rear changes at once"
-    ]
-  },
-  {
-    id: "damping",
-    title: "Damping",
-    description: "Controls suspension movement speed.",
-    overview:
-      "Damping determines how quickly the suspension compresses and rebounds after weight transfer.",
-    effects: [
-      "Higher rebound slows suspension extension",
-      "Higher bump slows suspension compression",
-      "More front rebound can improve steering response",
-      "More rear rebound can improve rear stability",
-      "Too much damping reduces grip on uneven surfaces"
-    ],
-    adjustments: [
-      {
-        setting: "Front Rebound",
-        increase: [
-          "Sharper steering feel",
-          "Faster weight transfer",
-          "Improved response",
-          "Can reduce grip on bumps"
-        ],
-        decrease: [
-          "More compliance",
-          "Better bump absorption",
-          "More grip on uneven surfaces"
-        ]
-      },
-      {
-        setting: "Rear Rebound",
-        increase: [
-          "More rear stability",
-          "Slower weight transfer",
-          "Reduced oversteer"
-        ],
-        decrease: [
-          "More rotation",
-          "Improved agility",
-          "Quicker rear weight transfer"
-        ]
-      },
-      {
-        setting: "Front Bump",
-        increase: [
-          "Reduced dive under braking",
-          "Sharper response",
-          "Less suspension travel"
-        ],
-        decrease: [
-          "More front grip",
-          "Better curb absorption",
-          "More compliance"
-        ]
-      },
-      {
-        setting: "Rear Bump",
-        increase: [
-          "More rear support",
-          "Reduced squat under acceleration"
-        ],
-        decrease: [
-          "Improved traction",
-          "Better grip over bumps"
-        ]
-      }
-    ],
-    tips: [
-      "Adjust rebound before bump",
-      "Use small increments",
-      "Test over curbs and bumps"
-    ],
-    mistakes: [
-      "Setting bump equal to rebound",
-      "Using excessive damping",
-      "Changing all values simultaneously"
-    ]
-  },
-  {
-    id: "aero",
-    title: "Aero",
-    description: "Controls downforce and top speed.",
-    overview:
-      "Aerodynamic settings balance cornering grip against maximum speed.",
-    effects: [
-      "More front downforce increases front grip",
-      "More rear downforce increases rear stability",
-      "Higher downforce improves cornering",
-      "Higher downforce reduces top speed",
-      "Lower downforce improves straight-line speed"
-    ],
-    adjustments: [
-      {
-        setting: "Front Downforce",
-        increase: [
-          "More front grip",
-          "Better high-speed turn-in",
-          "Greater cornering confidence",
-          "Lower top speed"
-        ],
-        decrease: [
-          "Higher top speed",
-          "Less drag",
-          "Reduced front grip"
-        ]
-      },
-      {
-        setting: "Rear Downforce",
-        increase: [
-          "More rear stability",
-          "Better traction at speed",
-          "Safer corner exits",
-          "Lower top speed"
-        ],
-        decrease: [
-          "Higher straight-line speed",
-          "Less rear grip",
-          "More rotation"
-        ]
-      }
-    ],
-    tips: [
-      "Use more aero on technical tracks",
-      "Reduce aero for speed-focused builds",
-      "Balance front and rear adjustments"
-    ],
-    mistakes: [
-      "Running maximum aero everywhere",
-      "Ignoring track layout",
-      "Adding front aero without adjusting rear aero"
-    ]
-  },
-  {
-    id: "gearing",
-    title: "Gearing",
-    description: "Controls acceleration and top speed.",
-    overview:
-      "Gear ratios determine how engine power is delivered to the wheels.",
-    effects: [
-      "Shorter gears improve acceleration",
-      "Longer gears improve top speed",
-      "Short final drive increases responsiveness",
-      "Long final drive improves highway speed",
-      "Proper gearing keeps the engine in its power band"
-    ],
-    adjustments: [
-      {
-        setting: "Final Drive",
-        increase: [
-          "Faster acceleration",
-          "Higher RPM",
-          "Reduced top speed"
-        ],
-        decrease: [
-          "Higher top speed",
-          "Lower RPM",
-          "Slower acceleration"
-        ]
-      },
-      {
-        setting: "Individual Gears",
-        increase: [
-          "Shorter first gear for better launches",
-          "Improved acceleration in lower gears"
-        ],
-        decrease: [
-          "Longer first gear for higher top speed",
-          "Reduced acceleration in lower gears"
-        ]
-      }
-    ],
-    tips: [
-      "Tune final drive before individual gears",
-      "Adjust gearing for track requirements",
-      "Monitor RPM drop between shifts"
-    ],
-    mistakes: [
-      "Using extremely short gearing",
-      "Leaving large RPM gaps between gears",
-      "Optimizing only for top speed"
-    ]
-  },
-  {
-    id: "brakes",
-    title: "Brakes",
-    description: "Controls brake balance and pressure.",
-    overview:
-      "Brake settings affect stopping distance, stability and corner entry behavior.",
-    effects: [
-      "More front bias increases stability",
-      "More rear bias increases rotation under braking",
-      "Higher pressure increases braking force",
-      "Lower pressure improves modulation",
-      "Rearward bias can help rotate the car into corners"
-    ],
-    adjustments: [
-      {
-        setting: "Brake Balance",
-        increase: [
-          "More front bias",
-          "Greater braking stability",
-          "Reduced rotation"
-        ],
-        decrease: [
-          "More rear bias",
-          "Improved corner entry rotation",
-          "Greater risk of instability"
-        ]
-      },
-      {
-        setting: "Brake Pressure",
-        increase: [
-          "Stronger braking force",
-          "Shorter stopping distances",
-          "Easier wheel lockup"
-        ],
-        decrease: [
-          "More brake modulation",
-          "Smoother braking",
-          "Less lockup risk"
-        ]
-      }
-    ],
-    tips: [
-      "Use small balance adjustments",
-      "Increase pressure gradually",
-      "Test during heavy braking zones"
-    ],
-    mistakes: [
-      "Using excessive rear bias",
-      "Maxing brake pressure immediately",
-      "Changing balance and pressure together"
-    ]
   }
 ];

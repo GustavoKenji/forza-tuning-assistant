@@ -1,16 +1,24 @@
-interface Adjustment {
-  setting: string;
-  increase: string[];
-  decrease: string[];
-};
-
-export interface UpgradesGuide {
+interface UpgradeGuide {
   id: string;
   title: string;
   description: string;
-  effects: string[];
-  overview?: string;
+
+  benefits?: string[];
+  drawbacks?: string[];
+
+  piCost?: string;
+
+  whenToUse?: string[];
+  avoidWhen?: string[];
+
   tips?: string[];
-  mistakes?: string[];
-  adjustments?: Adjustment[];
-};
+  unlocksTuning?: boolean;
+  tags?: string[];
+}
+
+export interface UpgradeCategory {
+  id: string;
+  title: string;
+  description: string;
+  guides: UpgradeGuide[];
+}
