@@ -1,13 +1,13 @@
-// import UpgradesDetailsPage from "@/features/upgrades-guide/UpgradesDetailsPage";
+import GuideDetailPage from "@/features/upgrades-guide/UpgradesDetailPage";
 
-// interface PageProps {
-//   params: Promise<{
-//     slug: string;
-//   }>;
-// }
+interface PageProps {
+  params: Promise<{
+    slug: string;
+  }>;
+}
 
-// export default async function UpgradesPage({ params }: PageProps) {
-//   const { slug } = await params;
+export default async function UpgradesPage({ params }: PageProps) {
+  const { slug } = await params;
 
-//   return <UpgradesDetailsPage slug={slug} />;
-// }
+  return <GuideDetailPage slug={slug} />;
+}

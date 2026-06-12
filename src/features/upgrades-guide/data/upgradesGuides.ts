@@ -22,23 +22,28 @@ export const upgradeCategories: UpgradeCategory[] = [
           "May leave less PI available for power upgrades"
         ],
         whenToUse: [
-          "Road racing builds",
-          "Grip-focused setups",
-          "Technical circuits"
+          "Build is lacking grip or handling",
+          "Vehicle struggles to put power down",
+          "The available compound matches the intended terrain",
+          "Consistency is more important than outright power"
         ],
         avoidWhen: [
-          "Low-class power builds",
-          "Drag-focused cars"
+          "The PI cost prevents more important upgrades",
+          "Straight-line performance is the main priority",
+          "The compound does not match the intended terrain"
         ],
         tips: [
-          "Often the strongest PI investment for road racing."
+          "Matching the tire compound to the terrain usually provides the biggest gains.",
+          "More grip allows the car to brake later, corner faster and accelerate earlier.",
+          "Tire compounds are often one of the most impactful upgrades available.",
+          "Higher grip is not always the best choice if it consumes too much PI."
         ],
-        tags: ["grip", "handling"]
+        tags: ["Grip", "Handling"]
       },
       {
         id: "tire-width",
         title: "Tire Width",
-        description: "Wider tires increase the contact patch between the tire and the road, improving grip and stability.",
+        description: "Wider tires increase the contact patch between the tire and the surface, improving grip and stability.",
         piCost: "Medium",
         benefits: [
           "Improves cornering grip",
@@ -50,16 +55,18 @@ export const upgradeCategories: UpgradeCategory[] = [
           "Can limit power upgrades"
         ],
         whenToUse: [
-          "High-power builds",
-          "AWD conversions",
-          "Road racing"
+          "The vehicle struggles for traction",
+          "Additional grip is needed",
+          "Power upgrades are causing wheelspin",
+          "The build has enough PI available"
         ],
         avoidWhen: [
           "Extremely PI-limited classes"
         ],
         tips: [
           "Rear tire width usually provides the biggest benefit."
-        ]
+        ],
+        tags: ["Cornering", "Launch"]
       },
       {
         id: "rim-size",
@@ -106,7 +113,7 @@ export const upgradeCategories: UpgradeCategory[] = [
           "Consumes a large amount of PI",
         ],
         whenToUse: [
-          "Road builds",
+          "Road, Rally and Drift builds benefits a lot from it",
           "Technical circuits",
           "Cars with excessive weight",
         ],
@@ -117,6 +124,7 @@ export const upgradeCategories: UpgradeCategory[] = [
         tips: [
           "Usually one of the most efficient upgrades in A and S1 class",
         ],
+        tags: ["Acceleration", "Breaking", "Cornering"]
       },
       {
         id: "anti-roll-bars",
@@ -141,7 +149,8 @@ export const upgradeCategories: UpgradeCategory[] = [
         tips: [
           "A cheap upgrade that provides valuable tuning flexibility."
         ],
-        unlocksTuning: true
+        unlocksTuning: true,
+        tags: ["Tuning", "Handling"]
       },
       {
         id: "springs-dampers",
@@ -167,11 +176,12 @@ export const upgradeCategories: UpgradeCategory[] = [
         tips: [
           "One of the most important upgrades for advanced tuning."
         ],
-        unlocksTuning: true
+        unlocksTuning: true,
+        tags: ["Tuning"]
       },
       {
         id: "brakes",
-        title: "Race Brakes",
+        title: "Brakes",
         description: "Improves braking performance and unlocks brake balance and pressure tuning.",
         piCost: "Medium",
         benefits: [
@@ -183,7 +193,7 @@ export const upgradeCategories: UpgradeCategory[] = [
           "Can be expensive in PI"
         ],
         whenToUse: [
-          "Road racing",
+          "Lacking brakes to turn properly",
           "Heavy vehicles"
         ],
         avoidWhen: [
@@ -192,7 +202,8 @@ export const upgradeCategories: UpgradeCategory[] = [
         tips: [
           "More useful on heavier cars than lightweight sports cars."
         ],
-        unlocksTuning: true
+        unlocksTuning: true,
+        tags: ["Breaking", "Cornering", "Tuning"]
       }
     ],
   },
@@ -224,7 +235,8 @@ export const upgradeCategories: UpgradeCategory[] = [
         ],
         tips: [
           "Not every car benefits from an engine swap."
-        ]
+        ],
+        tags: ["Power"]
       },
       {
         id: "aspiration",
@@ -247,7 +259,8 @@ export const upgradeCategories: UpgradeCategory[] = [
         ],
         tips: [
           "Turbo conversions usually offer the largest power ceiling."
-        ]
+        ],
+        tags: ["Power"]
       },
       {
         id: "drivetrains",
@@ -273,7 +286,8 @@ export const upgradeCategories: UpgradeCategory[] = [
         ],
         tips: [
           "AWD swaps are extremely strong but not always optimal."
-        ]
+        ],
+        tags: ["Launch", "Handling"]
       },
       {
         id: "bodykit",
@@ -296,7 +310,8 @@ export const upgradeCategories: UpgradeCategory[] = [
         ],
         tips: [
           "Some body kits provide surprisingly strong performance gains."
-        ]
+        ],
+        tags: ["Aero"]
       }
     ],
   },
@@ -333,7 +348,8 @@ export const upgradeCategories: UpgradeCategory[] = [
           "One of the most valuable upgrades for advanced tuning.",
           "A properly tuned transmission can feel like a power upgrade without adding horsepower."
         ],
-        unlocksTuning: true
+        unlocksTuning: true,
+        tags: ["Tuning"]
       },
       {
         id: "clutch",
@@ -361,7 +377,8 @@ export const upgradeCategories: UpgradeCategory[] = [
           "Often one of the most PI-efficient upgrades in the transmission category.",
           "The benefit becomes more noticeable as vehicle power increases."
         ],
-        unlocksTuning: true
+        unlocksTuning: true,
+        tags: ["Acceleration", "PI-efficient"]
       },
       {
         id: "driveline",
@@ -389,7 +406,8 @@ export const upgradeCategories: UpgradeCategory[] = [
         tips: [
           "A common upgrade when trying to maximize performance near a class limit.",
           "Works particularly well when combined with weight reduction."
-        ]
+        ],
+        tags: ["Acceleration", "Handling"]
       },
       {
         id: "differential",
@@ -421,7 +439,7 @@ export const upgradeCategories: UpgradeCategory[] = [
           "AWD, RWD and FWD vehicles often require very different differential settings."
         ],
         unlocksTuning: true,
-        tags: ["tuning", "traction"]
+        tags: ["Tuning", "Traction"]
       }
     ],
   },
@@ -460,7 +478,8 @@ export const upgradeCategories: UpgradeCategory[] = [
         tips: [
           "Front aero is often used to improve corner entry performance.",
           "Too much front downforce can make the rear feel unstable."
-        ]
+        ],
+        tags: ["Aero", "Handling", "Tuning"]
       },
       {
         id: "rear-wings",
@@ -493,7 +512,7 @@ export const upgradeCategories: UpgradeCategory[] = [
           "Rear aero is one of the easiest ways to stabilize a difficult car.",
           "Balance front and rear aero carefully to avoid handling issues."
         ],
-        tags: ["aero", "stability"]
+        tags: ["Aero", "Handling", "Tuning"]
       },
       {
         id: "side-skirts",
@@ -561,7 +580,7 @@ export const upgradeCategories: UpgradeCategory[] = [
         description: "Intake upgrades improve airflow into the engine, providing a small but efficient increase in power.",
         piCost: "Low",
         benefits: [
-          "Improves horsepower",
+          "Improves a little bit of horsepower",
           "Usually offers good PI efficiency",
           "Works well in most builds"
         ],
@@ -578,7 +597,8 @@ export const upgradeCategories: UpgradeCategory[] = [
         ],
         tips: [
           "Often one of the first engine upgrades players install."
-        ]
+        ],
+        tags: ["Horsepower", "PI-efficient"]
       },
       {
         id: "intake-manifold",
@@ -603,7 +623,8 @@ export const upgradeCategories: UpgradeCategory[] = [
         ],
         tips: [
           "Usually becomes more valuable as power levels increase."
-        ]
+        ],
+        tags: ["High-rpm"]
       },
       {
         id: "fuel-system",
@@ -628,7 +649,8 @@ export const upgradeCategories: UpgradeCategory[] = [
         ],
         tips: [
           "Becomes increasingly valuable as engine output rises."
-        ]
+        ],
+        tags: ["Horsepower"]
       },
       {
         id: "ignition",
@@ -637,7 +659,7 @@ export const upgradeCategories: UpgradeCategory[] = [
         piCost: "Low",
         benefits: [
           "Good PI efficiency",
-          "Adds horsepower",
+          "Adds a little bit of horsepower",
           "Works well in most engine setups"
         ],
         drawbacks: [
@@ -652,7 +674,8 @@ export const upgradeCategories: UpgradeCategory[] = [
         ],
         tips: [
           "Often considered one of the most efficient engine upgrades."
-        ]
+        ],
+        tags: ["Horsepower", "PI-efficient"]
       },
       {
         id: "exhaust",
@@ -677,7 +700,8 @@ export const upgradeCategories: UpgradeCategory[] = [
         ],
         tips: [
           "Often one of the best horsepower-per-PI upgrades available."
-        ]
+        ],
+        tags: ["Power", "PI-efficient"]
       },
       {
         id: "pistons-compression",
@@ -700,7 +724,8 @@ export const upgradeCategories: UpgradeCategory[] = [
         ],
         tips: [
           "One of the strongest naturally aspirated power upgrades."
-        ]
+        ],
+        tags: ["Horsepower"]
       },
       {
         id: "valves-valvetrain",
@@ -725,7 +750,8 @@ export const upgradeCategories: UpgradeCategory[] = [
         ],
         tips: [
           "Particularly effective on naturally aspirated engines."
-        ]
+        ],
+        tags: ["Horsepower", "High-rpm"]
       },
       {
         id: "displacement",
@@ -752,7 +778,7 @@ export const upgradeCategories: UpgradeCategory[] = [
         tips: [
           "Torque gains are often more noticeable than horsepower gains."
         ],
-        tags: ["torque", "acceleration"]
+        tags: ["Torque", "Acceleration"]
       },
       {
         id: "camshaft",
@@ -778,7 +804,7 @@ export const upgradeCategories: UpgradeCategory[] = [
         tips: [
           "One of the most impactful power upgrades available."
         ],
-        tags: ["horsepower", "high-rpm"]
+        tags: ["Horsepower", "High-rpm"]
       },
       {
         id: "oil-cooling",
@@ -801,7 +827,8 @@ export const upgradeCategories: UpgradeCategory[] = [
         ],
         tips: [
           "Usually installed after higher-impact power upgrades."
-        ]
+        ],
+        tags: ["PI-efficient"]
       },
       {
         id: "flywheel",
@@ -827,7 +854,8 @@ export const upgradeCategories: UpgradeCategory[] = [
         ],
         tips: [
           "A small upgrade that contributes to a more responsive driving experience."
-        ]
+        ],
+        tags: ["Acceleration"]
       }
     ],
   }

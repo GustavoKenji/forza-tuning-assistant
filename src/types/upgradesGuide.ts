@@ -1,4 +1,4 @@
-interface UpgradeGuide {
+export interface UpgradeGuide {
   id: string;
   title: string;
   description: string;
@@ -13,7 +13,14 @@ interface UpgradeGuide {
 
   tips?: string[];
   unlocksTuning?: boolean;
-  tags?: string[];
+  tags?: string[
+  // 🏁 Grip
+  // ⚡ Horsepower
+  // 🔨 Torque
+  // ✈️ Aero
+  // ⚙️ Tuning
+  // 🚀 Acceleration
+  ];
 }
 
 export interface UpgradeCategory {
