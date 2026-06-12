@@ -27,7 +27,7 @@ export function RecommendationCard({
     <>
       <Card className="bg-slate-700 border-slate-700 text-slate-100 mt-1">
         <CardHeader>
-          <CardTitle>{title}</CardTitle>
+          <CardTitle className="text-cyan-700 font-semibold text-xl">{title}</CardTitle>
         </CardHeader>
 
         <CardContent>
@@ -38,12 +38,12 @@ export function RecommendationCard({
           {priorities.map(priority => (
             <Card key={priority.id} className="mb-4 bg-slate-700 border">
               <CardHeader>
-                <CardTitle className="text-slate-100">{priority.name}</CardTitle>
+                <CardTitle className="font-semibold text-teal-500">{priority.name}</CardTitle>
                 <CardDescription className="text-slate-400">{priority.explanation}</CardDescription>
               </CardHeader>
               <CardContent>
                 {priority.guideId && (
-                  <Link className="text-indigo-400 hover:text-indigo-500" href={`/upgrade-guide/${priority.guideId}`}>
+                  <Link className="text-indigo-400 hover:text-indigo-500" href={`/upgrades-guide/${priority.guideId}`}>
                     Learn More
                   </Link>
                 )}
@@ -55,7 +55,7 @@ export function RecommendationCard({
       {upgradeNotes && (
         <Card className="bg-slate-700 border-slate-700 text-slate-100 mt-3">
           <CardHeader>
-            <CardTitle>Upgrade Notes</CardTitle>
+            <CardTitle className="text-cyan-700 font-semibold text-xl">Upgrade Notes</CardTitle>
           </CardHeader>
           <CardContent>
             <ul className="space-y-2">
@@ -70,7 +70,7 @@ export function RecommendationCard({
       )}
       <Card className="bg-slate-700 border-slate-700 text-slate-100 mt-3">
         <CardHeader>
-          <CardTitle>Tuning Tips</CardTitle>
+          <CardTitle className="text-cyan-700 font-semibold text-xl">Tuning Tips</CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-2">

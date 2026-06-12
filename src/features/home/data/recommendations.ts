@@ -10,17 +10,17 @@ export const recommendations: Recommendation[] = [
       {
         id: "sport-tires",
         name: "Sport Tires",
-        guideId: "tires"
+        guideId: "tire-compounds"
       },
       {
         id: "weight-reduction",
         name: "Weight Reduction",
-        guideId: "weight"
+        guideId: "weight-reduction"
       },
       {
         id: "anti-roll-bars",
         name: "Anti-Roll Bars",
-        guideId: "suspension"
+        guideId: "anti-roll-bars"
       },
       {
         id: "race-differential",
@@ -30,7 +30,7 @@ export const recommendations: Recommendation[] = [
       {
         id: "suspension",
         name: "Suspension",
-        guideId: "suspension"
+        guideId: "springs-dampers"
       }
     ],
     tuningTips: [
@@ -48,17 +48,17 @@ export const recommendations: Recommendation[] = [
       {
         id: "road-tires",
         name: "Road Tires",
-        guideId: "tires"
+        guideId: "tire-compounds"
       },
       {
         id: "weight-reduction",
         name: "Weight Reduction",
-        guideId: "weight"
+        guideId: "weight-reduction"
       },
       {
         id: "suspension",
         name: "Suspension",
-        guideId: "suspension"
+        guideId: "springs-dampers"
       },
       {
         id: "differential",
@@ -68,7 +68,7 @@ export const recommendations: Recommendation[] = [
       {
         id: "anti-roll-bars",
         name: "Anti-Roll Bars",
-        guideId: "suspension"
+        guideId: "anti-roll-bars"
       }
     ],
     tuningTips: [
@@ -86,17 +86,17 @@ export const recommendations: Recommendation[] = [
       {
         id: "front-tire-width",
         name: "Front Tire Width",
-        guideId: "tires"
+        guideId: "tire-compounds"
       },
       {
         id: "weight-reduction",
         name: "Weight Reduction",
-        guideId: "weight"
+        guideId: "weight-reduction"
       },
       {
         id: "anti-roll-bars",
         name: "Anti-Roll Bars",
-        guideId: "suspension"
+        guideId: "anti-roll-bars"
       },
       {
         id: "differential",
@@ -106,7 +106,7 @@ export const recommendations: Recommendation[] = [
       {
         id: "suspension",
         name: "Suspension",
-        guideId: "suspension"
+        guideId: "springs-dampers"
       }
     ],
     tuningTips: [
@@ -117,19 +117,19 @@ export const recommendations: Recommendation[] = [
   },
   {
     drivetrain: "AWD",
-    category: "Dirt",
+    category: "Rally",
     title: "All Surface Rally Build",
     description: "Designed for consistent grip across mixed terrain.",
     priorities: [
       {
         id: "rally-tires",
         name: "Rally Tires",
-        guideId: "tires"
+        guideId: "tire-compounds"
       },
       {
         id: "suspension",
         name: "Suspension",
-        guideId: "suspension"
+        guideId: "springs-dampers"
       },
       {
         id: "differential",
@@ -139,7 +139,7 @@ export const recommendations: Recommendation[] = [
       {
         id: "weight-reduction",
         name: "Weight Reduction",
-        guideId: "weight"
+        guideId: "weight-reduction"
       },
       {
         id: "transmission",
@@ -155,14 +155,14 @@ export const recommendations: Recommendation[] = [
   },
   {
     drivetrain: "RWD",
-    category: "Dirt",
+    category: "Rally",
     title: "Loose Surface RWD Build",
     description: "Focus on throttle control and predictable rotation.",
     priorities: [
       {
         id: "rally-suspension",
         name: "Rally Suspension",
-        guideId: "suspension"
+        guideId: "springs-dampers"
       },
       {
         id: "differential",
@@ -170,14 +170,14 @@ export const recommendations: Recommendation[] = [
         guideId: "differential"
       },
       {
-        id: "tires",
-        name: "Tires",
-        guideId: "tires"
+        id: "rally-tires",
+        name: "Rally Tires",
+        guideId: "tire-compounds"
       },
       {
         id: "weight-reduction",
         name: "Weight Reduction",
-        guideId: "weight"
+        guideId: "weight-reduction"
       },
       {
         id: "transmission",
@@ -193,29 +193,34 @@ export const recommendations: Recommendation[] = [
   },
   {
     drivetrain: "FWD",
-    category: "Dirt",
+    category: "Rally",
     title: "Stable Rally FWD Build",
     description: "Prioritize stability and front-end traction.",
     priorities: [
       {
         id: "rally-tires",
-        name: "Rally Tires"
+        name: "Rally Tires",
+        guideId: "weight-reduction"
       },
       {
         id: "weight-reduction",
-        name: "Weight Reduction"
+        name: "Weight Reduction",
+        guideId: "weight-reduction"
       },
       {
         id: "suspension",
-        name: "Suspension"
+        name: "Suspension",
+        guideId: "springs-dampers"
       },
       {
         id: "differential",
-        name: "Differential"
+        name: "Differential",
+        guideId: "differential"
       },
       {
         id: "transmission",
-        name: "Transmission"
+        name: "Transmission",
+        guideId: "transmission"
       }
     ],
     tuningTips: [
@@ -231,24 +236,29 @@ export const recommendations: Recommendation[] = [
     description: "Built for controlled slides and predictable transitions.",
     priorities: [
       {
-        id: "power",
-        name: "Power"
+        id: "high-rpm",
+        name: "High RPM",
+        guideId: "valves-valvetrain"
       },
       {
-        id: "differential",
-        name: "Differential"
+        id: "drift-differential",
+        name: "Drift Differential",
+        guideId: "differential"
       },
       {
-        id: "suspension",
-        name: "Suspension"
+        id: "drift-suspension",
+        name: "Drift Suspension",
+        guideId: "springs-dampers"
       },
       {
         id: "steering-angle",
-        name: "Steering Angle"
+        name: "Steering Angle",
+        guideId: "springs-dampers"
       },
       {
         id: "weight-reduction",
-        name: "Weight Reduction"
+        name: "Weight Reduction",
+        guideId: "weight-reduction"
       }
     ],
     tuningTips: [
@@ -264,24 +274,29 @@ export const recommendations: Recommendation[] = [
     description: "Combines stability with aggressive drift entries.",
     priorities: [
       {
-        id: "power",
-        name: "Power"
+        id: "high-rpm",
+        name: "High RPM",
+        guideId: "valves-valvetrain"
       },
       {
-        id: "differential",
-        name: "Differential"
+        id: "drift-differential",
+        name: "Drift Differential",
+        guideId: "differential"
       },
       {
-        id: "suspension",
-        name: "Suspension"
+        id: "drift-suspension",
+        name: "Drift Suspension",
+        guideId: "springs-dampers"
       },
       {
-        id: "transmission",
-        name: "Transmission"
+        id: "steering-angle",
+        name: "Steering Angle",
+        guideId: "springs-dampers"
       },
       {
         id: "weight-reduction",
-        name: "Weight Reduction"
+        name: "Weight Reduction",
+        guideId: "weight-reduction"
       }
     ],
     tuningTips: [
@@ -298,23 +313,28 @@ export const recommendations: Recommendation[] = [
     priorities: [
       {
         id: "offroad-tires",
-        name: "Offroad Tires"
+        name: "Offroad Tires",
+        guideId: "tire-compounds"
       },
       {
         id: "weight-reduction",
-        name: "Weight Reduction"
+        name: "Weight Reduction",
+        guideId: "weight-reduction"
       },
       {
         id: "rally-suspension",
-        name: "Rally Suspension"
+        name: "Rally Suspension",
+        guideId: "springs-dampers"
       },
       {
-        id: "differential",
-        name: "Differential"
+        id: "rally-differential",
+        name: "Rally Differential",
+        guideId: "differential"
       },
       {
         id: "transmission",
-        name: "Transmission"
+        name: "Transmission",
+        guideId: "transmission"
       }
     ],
     tuningTips: [
@@ -331,23 +351,28 @@ export const recommendations: Recommendation[] = [
     priorities: [
       {
         id: "offroad-tires",
-        name: "Offroad Tires"
-      },
-      {
-        id: "rally-suspension",
-        name: "Rally Suspension"
+        name: "Offroad Tires",
+        guideId: "tire-compounds"
       },
       {
         id: "weight-reduction",
-        name: "Weight Reduction"
+        name: "Weight Reduction",
+        guideId: "weight-reduction"
       },
       {
-        id: "differential",
-        name: "Differential"
+        id: "rally-suspension",
+        name: "Rally Suspension",
+        guideId: "springs-dampers"
+      },
+      {
+        id: "rally-differential",
+        name: "Rally Differential",
+        guideId: "differential"
       },
       {
         id: "transmission",
-        name: "Transmission"
+        name: "Transmission",
+        guideId: "transmission"
       }
     ],
     tuningTips: [
@@ -364,23 +389,28 @@ export const recommendations: Recommendation[] = [
     priorities: [
       {
         id: "offroad-tires",
-        name: "Offroad Tires"
+        name: "Offroad Tires",
+        guideId: "tire-compounds"
       },
       {
         id: "weight-reduction",
-        name: "Weight Reduction"
+        name: "Weight Reduction",
+        guideId: "weight-reduction"
       },
       {
         id: "rally-suspension",
-        name: "Rally Suspension"
+        name: "Rally Suspension",
+        guideId: "springs-dampers"
       },
       {
-        id: "differential",
-        name: "Differential"
+        id: "rally-differential",
+        name: "Rally Differential",
+        guideId: "differential"
       },
       {
         id: "transmission",
-        name: "Transmission"
+        name: "Transmission",
+        guideId: "transmission"
       }
     ],
     tuningTips: [
