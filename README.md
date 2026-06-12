@@ -102,19 +102,19 @@ What was made:
 • ~~Explanitions for priority upgrades~~
 • ~~Dynamic tips service~~
 
-# Sprint 6 — Upgrades Guides
-Create new guide page for upgrades:
-- Bodykits and Convertions
-- Aerodinamics and Apearance
-- Tires and Rims
-- Transmission
-- Platform and Driveability
-- Engine
+# ~~Sprint 6 — Upgrades Guides~~ 06/2026✅
+~~Create new guide page for upgrades:~~
+- ~~Bodykits and Convertions~~
+- ~~Aerodinamics and Apearance~~
+- ~~Tires and Rims~~
+- ~~Transmission~~
+- ~~Platform and Handling~~
+- ~~Engine~~
 
 Explaning:
-- PI Usage
-- Pros and Cons
-- What should be the priority
+- PI Usage ✅
+- Pros and Cons ✅
+- When should be upgraded ✅
 
 ---
 

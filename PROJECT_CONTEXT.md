@@ -340,6 +340,8 @@ O que foi feito:
 
 ## Sprint 6 — Guia de Upgrades
 
+Status: Concluída
+
 Criar uma seção educacional sobre upgrades:
 
 * Pneus
@@ -357,15 +359,13 @@ Explicando:
 
 ---
 
-<!-- ## Sprint 7 — Melhorias de UX
+## Sprint 7 — Melhorias de UX
 
 Possíveis melhorias:
 
-* Busca
-* Filtros
-* Breadcrumbs
+* Versao em PT-BR
 * Navegação aprimorada
-* Melhorias Mobile -->
+* Melhorias Mobile
 
 ---
 
