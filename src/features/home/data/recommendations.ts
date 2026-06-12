@@ -117,7 +117,7 @@ export const recommendations: Recommendation[] = [
   },
   {
     drivetrain: "AWD",
-    category: "Dirt",
+    category: "Rally",
     title: "All Surface Rally Build",
     description: "Designed for consistent grip across mixed terrain.",
     priorities: [
@@ -155,7 +155,7 @@ export const recommendations: Recommendation[] = [
   },
   {
     drivetrain: "RWD",
-    category: "Dirt",
+    category: "Rally",
     title: "Loose Surface RWD Build",
     description: "Focus on throttle control and predictable rotation.",
     priorities: [
@@ -193,7 +193,7 @@ export const recommendations: Recommendation[] = [
   },
   {
     drivetrain: "FWD",
-    category: "Dirt",
+    category: "Rally",
     title: "Stable Rally FWD Build",
     description: "Prioritize stability and front-end traction.",
     priorities: [

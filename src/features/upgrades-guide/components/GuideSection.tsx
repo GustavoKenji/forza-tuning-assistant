@@ -8,7 +8,7 @@ export function GuideSection(){
       {
         upgradeCategories.map((category) => (
           <div key={category.id} className="mt-4">
-            <h3 className="text-slate-100 font-semibold text-2xl">{category.title}</h3>
+            <h3 className="text-cyan-700 font-semibold text-2xl">{category.title}</h3>
             <p className="text-slate-300 text-lg mb-4">{category.description}</p>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {

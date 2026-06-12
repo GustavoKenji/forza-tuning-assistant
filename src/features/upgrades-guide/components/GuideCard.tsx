@@ -16,7 +16,7 @@ export function GuideCard({ guide }: Props) {
   return (
     <Card className="bg-slate-700 border-slate-700 text-slate-100 mt-2">
       <CardHeader>
-        <CardTitle className="font-semibold">{guide.title}</CardTitle>
+        <CardTitle className="font-semibold text-teal-500">{guide.title}</CardTitle>
         <CardDescription className="text-slate-400">{guide.description}</CardDescription>
       </CardHeader>
       <CardContent>
