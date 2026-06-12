@@ -43,7 +43,7 @@ export function RecommendationCard({
               </CardHeader>
               <CardContent>
                 {priority.guideId && (
-                  <Link className="text-indigo-400 hover:text-indigo-500" href={`/upgrade-guide/${priority.guideId}`}>
+                  <Link className="text-indigo-400 hover:text-indigo-500" href={`/upgrades-guide/${priority.guideId}`}>
                     Learn More
                   </Link>
                 )}
