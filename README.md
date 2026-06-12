@@ -93,14 +93,14 @@ Example:
 - Road + AWD + A class → S1 class
 
 What was made:
-• ~~Build recommendations by drivetrain~~
-• ~~Build recommendations by category~~
-• ~~Upgrade suggestions by class progression~~
-• ~~Dynamic priority adjustment~~
-• ~~Recommendation service refactor~~
-• ~~Separation of recommendation logic into dedicated services~~
-• ~~Explanitions for priority upgrades~~
-• ~~Dynamic tips service~~
+- ~~Build recommendations by drivetrain~~
+- ~~Build recommendations by category~~
+- ~~Upgrade suggestions by class progression~~
+- ~~Dynamic priority adjustment~~
+- ~~Recommendation service refactor~~
+- ~~Separation of recommendation logic into dedicated services~~
+- ~~Explanitions for priority upgrades~~
+- ~~Dynamic tips service~~
 
 # ~~Sprint 6 — Upgrades Guides~~ 06/2026✅
 ~~Create new guide page for upgrades:~~
@@ -115,6 +115,14 @@ Explaning:
 - PI Usage ✅
 - Pros and Cons ✅
 - When should be upgraded ✅
+
+## Sprint 7 — Melhorias de UX
+
+Possible updates:
+
+* Version in PT-BR
+* Upgrade Navigation
+* Mobile Updates ?
 
 ---
 
