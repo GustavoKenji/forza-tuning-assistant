@@ -1099,7 +1099,20 @@ export const recommendations: Recommendation[] = [
       {
         id: "rally-differential",
         name: "Rally Differential",
-        guideId: "differential"
+        guideId: "differential",
+        benefits: [
+          "Improves front-wheel traction on loose surfaces",
+          "Reduces inside wheelspin during acceleration",
+          "Helps maintain momentum when exiting corners"
+        ],
+        drawbacks: [
+          "Aggressive settings can increase understeer and reduce steering response"
+        ],
+        reasons: [
+          "One of the most effective upgrades for improving FWD traction",
+          "Helps transfer power more efficiently on loose terrain",
+          "Supports stable acceleration without excessive wheelspin"
+        ]
       }      
     ],
     tuningTips: [
