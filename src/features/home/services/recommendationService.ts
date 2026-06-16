@@ -44,6 +44,11 @@ export function getRecommendation({
     targetClass
   );
 
+  const upgradeSuggestions = getUpgradeSuggestions(
+    currentClass,
+    targetClass
+  );
+
   return {
     ...recommendation,
 
@@ -56,9 +61,10 @@ export function getRecommendation({
 
     classUpgrade: `${currentClass} -> ${targetClass}`,
 
-    upgradeNotes: getUpgradeSuggestions(
-      currentClass,
-      targetClass
-    )
+    upgradeNotes: [
+      ...recommendation.upgradeNotes ?? [],
+      ...upgradeSuggestions
+    ]
+    
   };
 }
