@@ -1,8 +1,7 @@
+import { Drivetrain, Category, CarClass } from "../types/types";
 import { recommendations } from "@/features/home/data/recommendations";
 import { Recommendation } from "@/types/recommendation";
 import { getUpgradeSuggestions } from '../services/upgradeSugestionsService';
-import { getPriorityAdjustments } from '../services/priorityAdjustmentsService';
-import { getPriorityMetadata } from "./priorityExplanationService";
 import { getDynamicTuningTips } from "./dynamicTuningTips";
 
 interface RecommendationParams {
@@ -28,21 +27,14 @@ export function getRecommendation({
     return undefined;
   }
 
-  const adjustedPriorities = getPriorityAdjustments(
-    targetClass,
-    recommendation.priorities
-  );
-
-  const prioritiesWithInfo = adjustedPriorities.map(priority => ({
-    ...priority,
-    ...getPriorityMetadata(priority.id)
-  }));
-
-  const dynamicTips = getDynamicTuningTips(
-    drivetrain,
-    category,
-    targetClass
-  );
+  const dynamicTips = getDynamicTuningTips({
+    category: category as Category,
+    drivetrain: drivetrain as Drivetrain,
+    targetClass: targetClass as CarClass,
+    priorities: recommendation.priorities,
+    tuningTips: recommendation.tuningTips
+  })
+  const parsedDynamicTips = dynamicTips.map(tip => ({topic: tip.type, content: tip.text}))
 
   const upgradeSuggestions = getUpgradeSuggestions(
     currentClass,
@@ -52,11 +44,9 @@ export function getRecommendation({
   return {
     ...recommendation,
 
-    priorities: prioritiesWithInfo,
-
     tuningTips: [
       ...recommendation.tuningTips,
-      ...dynamicTips
+      ...parsedDynamicTips
     ],
 
     classUpgrade: `${currentClass} -> ${targetClass}`,

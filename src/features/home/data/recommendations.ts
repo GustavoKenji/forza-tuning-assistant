@@ -92,9 +92,18 @@ export const recommendations: Recommendation[] = [
       }
     ],
     tuningTips: [
-      "Run slightly softer rear anti-roll bars",
-      "Use moderate differential lock values",
-      "Increase front aero if understeer is present"
+      {
+        topic: "anti-roll-bars",
+        content: "Run slightly softer rear anti-roll bars"
+      },
+      {
+        topic: "differential",
+        content: "Use moderate differential lock values"
+      },
+      {
+        topic: "aero",
+        content: "Increase front aero if understeer is present"
+      }
     ]
   },
   {
@@ -188,9 +197,18 @@ export const recommendations: Recommendation[] = [
       }
     ],
     tuningTips: [
-      "Avoid excessive rear tire pressure",
-      "Reduce acceleration lock if the car becomes unstable on corner exit",
-      "Maintain rear stability before adding power"
+      {
+        topic: "tire-pressure",
+        content: "Avoid excessive rear tire pressure"
+      },
+      {
+        topic: "differential",
+        content: "Reduce acceleration lock if the car becomes unstable on corner exit"
+      },
+      {
+        topic: "philosophy",
+        content: "Maintain rear stability before adding power"
+      }
     ]
   },
   {
@@ -284,9 +302,18 @@ export const recommendations: Recommendation[] = [
       }
     ],
     tuningTips: [
-      "Reduce front anti-roll bar stiffness to help minimize understeer",
-      "Increase rear rotation gradually to improve corner entry response",
-      "Avoid excessive front tire pressure to preserve front-end grip"
+      {
+        topic: "anti-roll-bar",
+        content: "Reduce front anti-roll bar stiffness to help minimize understeer"
+      },
+      {
+        topic: "tuning",
+        content: "Increase rear rotation gradually to improve corner entry response"
+      },
+      {
+        topic: "tire-pressure",
+        content: "Avoid excessive front tire pressure to preserve front-end grip"
+      }
     ]
   },
   {
@@ -387,9 +414,18 @@ export const recommendations: Recommendation[] = [
       }
     ],
     tuningTips: [
-      "Use softer springs to help the tires maintain contact with uneven terrain",
-      "Lower tire pressures if the vehicle struggles for grip on dirt or gravel",
-      "Prioritize traction and stability before investing heavily in power upgrades"
+      {
+        topic: "suspension",
+        content: "Use softer springs to help the tires maintain contact with uneven terrain"
+      },
+      {
+        topic: "tuning",
+        content: "Lower tire pressures if the vehicle struggles for grip on dirt or gravel"
+      },
+      {
+        topic: "philosophy",
+        content: "Prioritize traction and stability before investing heavily in power upgrades"
+      }
     ]
   },
   {
@@ -490,9 +526,18 @@ export const recommendations: Recommendation[] = [
       }
     ],
     tuningTips: [
-      "Keep acceleration lock moderate to avoid excessive wheelspin on corner exit",
-      "Use softer suspension settings to maintain grip over bumps and terrain changes",
-      "A predictable rally car is usually faster than an aggressive one"
+      {
+        topic: "differential",
+        content: "Keep acceleration lock moderate to avoid excessive wheelspin on corner exit"
+      },
+      {
+        topic: "suspension",
+        content: "Use softer suspension settings to maintain grip over bumps and terrain changes"
+      },
+      {
+        topic: "philosophy",
+        content: "A predictable rally car is usually faster than an aggressive one"
+      }
     ]
   },
   {
@@ -593,9 +638,18 @@ export const recommendations: Recommendation[] = [
       }
     ],
     tuningTips: [
-      "Prioritize front-end grip to maintain cornering speed on loose surfaces",
-      "Increase rear stiffness gradually to help reduce understeer",
-      "Maintaining momentum is usually more important than maximizing power"
+      {
+        topic: "philosophy",
+        content: "Prioritize front-end grip to maintain cornering speed on loose surfaces"
+      },
+      {
+        topic: "suspension",
+        content: "Increase rear stiffness gradually to help reduce understeer"
+      },
+      {
+        topic: "philosophy",
+        content: "Maintaining momentum is usually more important than maximizing power"
+      }
     ]
   },
   {
@@ -696,9 +750,18 @@ export const recommendations: Recommendation[] = [
       }
     ],
     tuningTips: [
-      "Use high acceleration lock to maintain consistent wheelspin",
-      "Run higher rear tire pressure to make drift initiation easier",
-      "Prioritize consistency over maximum drift angle"
+      {
+        topic: "differential",
+        content: "Use high acceleration lock to maintain consistent wheelspin"
+      },
+      {
+        topic: "tire-pressure",
+        content: "Run higher rear tire pressure to make drift initiation easier"
+      },
+      {
+        topic: "philosophy",
+        content: "Prioritize consistency over maximum drift angle"
+      }
     ],
     upgradeNotes: [
       "Recommended power range: 350-500 HP",
@@ -802,9 +865,18 @@ export const recommendations: Recommendation[] = [
       }
     ],
     tuningTips: [
-      "Bias power toward the rear to improve rotation while drifting",
-      "Use shorter gearing to keep the engine in its power band",
-      "Avoid excessive front grip, as it can reduce drift rotation"
+      {
+        topic: "philosophy",
+        content: "Bias power toward the rear to improve rotation while drifting"
+      },
+      {
+        topic: "tuning",
+        content: "Use shorter gearing to keep the engine in its power band"
+      },
+      {
+        topic: "tuning",
+        content: "Avoid excessive front grip, as it can reduce drift rotation"
+      }
     ],
     upgradeNotes: [
       "AWD drift builds are generally easier to control than RWD setups",
@@ -910,9 +982,18 @@ export const recommendations: Recommendation[] = [
       }
     ],
     tuningTips: [
-      "Use softer springs to improve bump absorption and landing stability",
-      "Run slightly lower tire pressures to improve traction on rough terrain",
-      "Prioritize stability over top speed"
+      {
+        topic: "suspension",
+        content: "Use softer springs to improve bump absorption and landing stability"
+      },
+      {
+        topic: "tire-pressure",
+        content: "Run slightly lower tire pressures to improve traction on rough terrain"
+      },
+      {
+        topic: "philosophy",
+        content: "Prioritize stability over top speed"
+      }
     ]
   },
   {
@@ -1013,9 +1094,18 @@ export const recommendations: Recommendation[] = [
       }
     ],
     tuningTips: [
-      "Use softer springs to improve bump absorption and landing stability",
-      "Run slightly lower tire pressures to improve traction on rough terrain",
-      "Prioritize stability over top speed"
+      {
+        topic: "suspension",
+        content: "Use softer springs to improve bump absorption and landing stability"
+      },
+      {
+        topic: "tire-pressure",
+        content: "Run slightly lower tire pressures to improve traction on rough terrain"
+      },
+      {
+        topic: "philosophy",
+        content: "Prioritize stability over top speed"
+      }
     ]
   },
   {
@@ -1116,9 +1206,18 @@ export const recommendations: Recommendation[] = [
       }      
     ],
     tuningTips: [
-      "Use softer springs to improve bump absorption and landing stability",
-      "Run slightly lower tire pressures to improve traction on rough terrain",
-      "Prioritize front-end traction over aggressive rotation"
+      {
+        topic: "suspension",
+        content: "Use softer springs to improve bump absorption and landing stability"
+      },
+      {
+        topic: "tire-pressure",
+        content: "Run slightly lower tire pressures to improve traction on rough terrain"
+      },
+      {
+        topic: "philosophy",
+        content: "Prioritize front-end traction over aggressive rotation"
+      }
     ]
   }
 ];

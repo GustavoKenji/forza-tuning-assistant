@@ -9,12 +9,17 @@ export interface Priority {
   reasons?: string[];
 }
 
+export interface TuningTips {
+  topic: string;
+  content: string;
+}
+
 export interface Recommendation {
   title: string;
   description: string;
   strategy?: string;
   priorities: Priority[];
-  tuningTips: string[];
+  tuningTips: TuningTips[];
   drivetrain: string;
   category: string;
   currentClass?: string;
