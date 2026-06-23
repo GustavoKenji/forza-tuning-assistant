@@ -1,18 +1,17 @@
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle
 } from "@/components/ui/card";
-import { Priority } from "@/types/recommendation";
+import { Priority, TuningTips } from "@/types/recommendation";
 import Link from "next/link";
 
 interface Props {
   title: string;
   description: string;
   priorities: Priority[];
-  tuningTips: string[];
+  tuningTips: TuningTips[];
   upgradeNotes?: string[];
 }
 
@@ -39,9 +38,42 @@ export function RecommendationCard({
             <Card key={priority.id} className="mb-4 bg-slate-700 border">
               <CardHeader>
                 <CardTitle className="font-semibold text-teal-500">{priority.name}</CardTitle>
-                <CardDescription className="text-slate-400">{priority.explanation}</CardDescription>
               </CardHeader>
               <CardContent>
+                <div className="text-slate-100 rounded-lg border border-slate-600 px-4 py-2 mb-2">
+                  <div className="mb-2">
+                    <p className="font-medium text-cyan-400">
+                      Benefits ↑
+                    </p>
+                    <ul className="list-disc list-inside text-sm space-y-1">
+                      {priority.benefits?.map((effect) => (
+                        <li key={effect}>{effect}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mb-2">
+                    <p className="font-medium text-indigo-400">
+                      Drawbacks ↓
+                    </p>
+                    <ul className="list-disc list-inside text-sm space-y-1">
+                      {priority.drawbacks?.map((effect) => (
+                        <li key={effect}>{effect}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <p className="font-medium text-cyan-300">
+                      Reasons
+                    </p>
+                    <ul className="list-disc list-inside text-sm space-y-1">
+                      {priority.reasons?.map((effect) => (
+                        <li key={effect}>{effect}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
                 {priority.guideId && (
                   <Link className="text-indigo-400 hover:text-indigo-500" href={`/upgrades-guide/${priority.guideId}`}>
                     Learn More
@@ -74,9 +106,9 @@ export function RecommendationCard({
         </CardHeader>
         <CardContent>
           <ul className="space-y-2">
-            {tuningTips.map((tip) => (
-              <li key={tip}>
-                ✓ {tip}
+            {tuningTips.map((tip, id) => (
+              <li key={id}>
+                ✓ {tip.content}
               </li>
             ))}
           </ul>

@@ -359,13 +359,76 @@ Explicando:
 
 ---
 
-## Sprint 7 — Melhorias de UX
+## Sprint 7 - Update Recommendation System
 
-Possíveis melhorias:
+Status: Concluída
 
-* Versao em PT-BR
-* Navegação aprimorada
-* Melhorias Mobile
+Objetivo: Melhorar as recomendacoes adicionando mais informacoes sobre os upgrades de cada build.
+
+Agora cada recomendacao contem:
+
+- Benefits
+- Drawbacks
+- Recommendation Reasons
+- Tuning Tips
+- Build Philosophy
+
+Estrutura:
+
+Priority {
+  id
+  name
+  guideId
+
+  benefits[]
+  drawbacks[]
+  reasons[]
+}
+
+### Recommendation Design Principles
+
+Each category should emphasize a different vehicle philosophy.
+
+Road:
+- Grip
+- Cornering Speed
+- Stability
+
+Rally:
+- Mixed Surface Performance
+- Momentum
+- Rotation
+
+Drift:
+- Vehicle Control
+- Weight Transfer
+- Drift Consistency
+
+Cross-Country:
+- Traction
+- Terrain Compliance
+- Landing Stability
+
+**The project has completed its educational upgrade guide phase and is now focused on building an intelligent recommendation system that explains not only which upgrades to install, but also the reasoning, benefits, tradeoffs and tuning philosophy behind each build.
+
+---
+
+## Future Sprint Candidates
+
+### Sprint 8 - Base Builds Configurations (leaving this to the future)
+
+Display a set base build, upgrades and tuning, for each recommendation
+Also explains how to fine tune the base build
+
+- Base Builds
+- Tradeoffs on tuning settings
+
+Would be able to attach each recommendation to one build and help the player learn more than using a build generator.
+
+### Sprint 9 - UI/UX and PT/BR Translation (WIP)
+
+- Upgrade UI/UX
+- Create a new version translated to Brazil`s portuguese
 
 ---
 
