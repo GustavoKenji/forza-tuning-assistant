@@ -107,8 +107,8 @@ export function RecommendationCard({
         </CardHeader>
         <CardContent>
           <ul className="space-y-2">
-            {tuningTips.map((tip) => (
-              <li key={tip.topic}>
+            {tuningTips.map((tip, id) => (
+              <li key={id}>
                 ✓ {tip.content}
               </li>
             ))}

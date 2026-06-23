@@ -230,8 +230,6 @@ function selectDynamicTips(
     getBestTip(handlingTips),
     getBestTip(tuningTips),
   ].filter((tip): tip is DynamicTip => tip !== null);
-  
-  console.log("test dynamic tips results >> ", selectedTips);
 
   return selectedTips;
 }

@@ -36,10 +36,13 @@ export function getRecommendation({
   })
   const parsedDynamicTips = dynamicTips.map(tip => ({topic: tip.type, content: tip.text}))
 
-  const upgradeSuggestions = getUpgradeSuggestions(
-    currentClass,
-    targetClass
-  );
+  const upgradeSuggestions = getUpgradeSuggestions({
+    currentClass: currentClass as CarClass,
+    targetClass: targetClass as CarClass,
+    category: category as Category,
+    priorities: recommendation.priorities,
+  });
+  const parsedUpgradeSuggestions = upgradeSuggestions.map(suggestion => (suggestion.text));
 
   return {
     ...recommendation,
@@ -53,7 +56,7 @@ export function getRecommendation({
 
     upgradeNotes: [
       ...recommendation.upgradeNotes ?? [],
-      ...upgradeSuggestions
+      ...parsedUpgradeSuggestions
     ]
     
   };
