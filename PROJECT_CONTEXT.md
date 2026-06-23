@@ -359,7 +359,9 @@ Explicando:
 
 ---
 
-## Sprint 7 - Build Recommendation System (In Progress)
+## Sprint 7 - Update Recommendation System
+
+Status: Concluída
 
 Objetivo: Melhorar as recomendacoes adicionando mais informacoes sobre os upgrades de cada build.
 
@@ -413,7 +415,7 @@ Cross-Country:
 
 ## Future Sprint Candidates
 
-### Sprint 8 - Base Builds Configurations
+### Sprint 8 - Base Builds Configurations (leaving this to the future)
 
 Display a set base build, upgrades and tuning, for each recommendation
 Also explains how to fine tune the base build
@@ -423,7 +425,7 @@ Also explains how to fine tune the base build
 
 Would be able to attach each recommendation to one build and help the player learn more than using a build generator.
 
-### Sprint 9 - UI/UX and PT/BR Translation
+### Sprint 9 - UI/UX and PT/BR Translation (WIP)
 
 - Upgrade UI/UX
 - Create a new version translated to Brazil`s portuguese

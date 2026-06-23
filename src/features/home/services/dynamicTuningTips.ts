@@ -68,7 +68,7 @@ const DYNAMIC_TIPS: DynamicTip[] = [
   },
   {
     id: "weight-reduction-balance",
-    text: "Weight reduction improves every phase of a lap, making it one of the most efficient performance upgrades available.",
+    text: "Lighter vehicles often feel more responsive and predictable, making it easier to carry speed through corners and transitions.",
     type: "philosophy",
     priorityIds: ["weight-reduction"]
   },

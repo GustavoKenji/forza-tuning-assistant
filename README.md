@@ -116,13 +116,18 @@ Explaning:
 - Pros and Cons ✅
 - When should be upgraded ✅
 
-## Sprint 7 — Melhorias de UX
+## ~~Sprint 7 — Update Recommendation System~~ 06/2026✅
+~~Update recommendations dataset structure to improve the entire service~~
 
-Possible updates:
+~~Each recommendation now has:~~
+- ~~Benefits~~
+- ~~Drawbacks~~
+- ~~Recommendation Reasons~~
+- ~~Tuning Tips~~
+- ~~Build Philosophy~~
 
-* Version in PT-BR
-* Upgrade Navigation
-* Mobile Updates ?
+~~Also had improvements on Tuning tips and Upgrades notes~~
+*~~and removed services that where outdated~~
 
 ---
 

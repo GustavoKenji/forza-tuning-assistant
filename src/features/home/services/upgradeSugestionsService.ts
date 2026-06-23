@@ -34,6 +34,16 @@ interface ScoredSuggestion {
 
 const UPGRADE_SUGGESTIONS: UpgradeSuggestion[] = [
   {
+    id: "target-b-foundation",
+
+    type: "progression",
+
+    text:
+      "At B class, efficient upgrades often provide better results than aggressive power increases. Building a balanced foundation early makes future class upgrades easier.",
+
+    targetClasses: ["B"]
+  },
+  {
     id: "b-to-a-handling",
 
     type: "progression",
@@ -105,6 +115,16 @@ const UPGRADE_SUGGESTIONS: UpgradeSuggestion[] = [
       "Using most of your available PI on engine upgrades can create a vehicle that is difficult to control and slower overall.",
 
     classJumpSize: ["large"]
+  },
+  {
+    id: "target-b-pi-efficiency",
+
+    type: "pi-management",
+
+    text:
+      "At B class, small and efficient upgrades usually deliver more performance per PI than major component changes.",
+
+    targetClasses: ["B"]
   },
   {
     id: "tires-pi-value",
